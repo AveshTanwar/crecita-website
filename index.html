@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crecita - Expert DevOps, MLOps & Cybersecurity solutions. Transform your business with cutting-edge technology.">
+    <meta name="keywords" content="DevOps, MLOps, Cybersecurity, Cloud, Technology Solutions">
+    <meta name="author" content="Crecita">
+    <title>Crecita - Empowering Your Digital Future</title>
+    
+    <!-- Preconnect for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="assets/Crecita Logo.PNG" alt="Crecita Logo" class="brand-logo">
+                <span>Crecita</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Pioneering Digital Excellence</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Empowering Your <span style="color: var(--primary);">Digital Future</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Expert solutions in DevOps, MLOps, and Cybersecurity. 
+                    We transform businesses with cutting-edge technology and proven methodologies.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Explore Services</span>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i>
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Tools Mastered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Industries Served</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-xl animate-on-scroll">
+                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">Our Expertise</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Comprehensive solutions across three core technology domains
+                </p>
+            </div>
+            
+            <div class="grid grid-3 gap-lg">
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
+                        <div style="color: var(--primary); font-size: 2.5rem; margin-bottom: var(--space-sm);">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3 class="card-title">DevOps</h3>
+                    </div>
+                    <p class="card-description mb-md">
+                        Streamline development with CI/CD pipelines, Infrastructure as Code, 
+                        and automated monitoring solutions.
+                    </p>
+                    <div class="flex gap-sm mb-md" style="flex-wrap: wrap;">
+                        <span class="badge">Jenkins</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Kubernetes</span>
+                        <span class="badge">Terraform</span>
+                    </div>
+                    <a href="services.html#devops" class="btn btn-secondary" style="margin-top: auto;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
+                        <div style="color: var(--accent); font-size: 2.5rem; margin-bottom: var(--space-sm);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="card-title">MLOps</h3>
+                    </div>
+                    <p class="card-description mb-md">
+                        Deploy and manage ML models at scale with automated pipelines 
+                        and robust monitoring systems.
+                    </p>
+                    <div class="flex gap-sm mb-md" style="flex-wrap: wrap;">
+                        <span class="badge">SageMaker</span>
+                        <span class="badge">MLflow</span>
+                        <span class="badge">Kubeflow</span>
+                        <span class="badge">Airflow</span>
+                    </div>
+                    <a href="services.html#mlops" class="btn btn-secondary" style="margin-top: auto;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <div class="card-header">
+                        <div style="color: var(--success); font-size: 2.5rem; margin-bottom: var(--space-sm);">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="card-title">Cybersecurity</h3>
+                    </div>
+                    <p class="card-description mb-md">
+                        Protect digital assets with comprehensive security solutions, 
+                        threat detection, and compliance frameworks.
+                    </p>
+                    <div class="flex gap-sm mb-md" style="flex-wrap: wrap;">
+                        <span class="badge">Splunk</span>
+                        <span class="badge">QRadar</span>
+                        <span class="badge">AWS Security</span>
+                        <span class="badge">SIEM</span>
+                    </div>
+                    <a href="services.html#cybersecurity" class="btn btn-secondary" style="margin-top: auto;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center mb-xl animate-on-scroll">
+                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">Industries We Serve</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary);">
+                    Delivering specialized solutions across diverse sectors
+                </p>
+            </div>
+            
+            <div class="grid grid-3 gap-lg">
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">Finance & Banking</span>
+                </div>
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">SaaS Platforms</span>
+                </div>
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">E-commerce</span>
+                </div>
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">Healthcare</span>
+                </div>
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">Education</span>
+                </div>
+                <div class="flex items-center gap-md animate-on-scroll" style="padding: var(--space-lg); background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+                    <div style="color: var(--primary); font-size: 1.5rem;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <span style="font-weight: 500; color: var(--text-primary);">Real Estate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center mb-xl animate-on-scroll">
+                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">Client Testimonials</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary);">What our clients say about working with Crecita</p>
+            </div>
+            
+            <div class="grid grid-2 gap-xl">
+                <div class="card animate-on-scroll">
+                    <div style="color: var(--primary); font-size: 2rem; margin-bottom: var(--space-md);">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.6; margin-bottom: var(--space-lg);">
+                        "Crecita didn't just implement technology - they transformed how we think about infrastructure. Their DevOps expertise reduced our deployment time from hours to minutes, and our uptime has never been better."
+                    </p>
+                    <div style="border-top: 1px solid var(--border); padding-top: var(--space-md);">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-xs);">Technology Company</div>
+                    </div>
+                </div>
+                
+                <div class="card animate-on-scroll">
+                    <div style="color: var(--accent); font-size: 2rem; margin-bottom: var(--space-md);">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p style="color: var(--text-primary); font-size: 1.125rem; line-height: 1.6; margin-bottom: var(--space-lg);">
+                        "The MLOps platform Crecita built for us has revolutionized our data science workflow. We can now deploy models with confidence and monitor their performance in real-time. It's been a game-changer for our business."
+                    </p>
+                    <div style="border-top: 1px solid var(--border); padding-top: var(--space-md);">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: var(--space-xs);">Healthcare Technology</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center animate-on-scroll">
+                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">
+                    Ready to Transform Your Business?
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Let's discuss how we can accelerate your digital journey with our expertise 
+                    in DevOps, MLOps, and Cybersecurity.
+                </p>
+                <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </a>
+                    <a href="case-studies.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-chart-line"></i>
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Crecita</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-md);">
+                        Empowering your digital future with cutting-edge technology solutions.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: var(--space-md); color: white;">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: var(--space-md); color: white;">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#devops">DevOps</a></li>
+                        <li><a href="services.html#mlops">MLOps</a></li>
+                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+                        <li><a href="contact.html">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: var(--space-md); color: white;">Contact Info</h4>
+                    <div style="color: rgba(255, 255, 255, 0.8);">
+                        <p style="display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-envelope"></i>
+                            <span>reach@crecita-it.com</span>
+                        </p>
+                        <p style="display: flex; align-items: center; gap: var(--space-xs);">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9096 451 662</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Crecita. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize counter animation when stats come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const website = new CrecitaWebsite();
+                    website.animateCounters();
+                    statsObserver.disconnect();
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.hero-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

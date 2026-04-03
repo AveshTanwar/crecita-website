@@ -3,33 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Crecita Services - Professional DevOps, MLOps & Cybersecurity solutions. Transform your business with our expert technology services.">
-    <meta name="keywords" content="DevOps services, MLOps solutions, Cybersecurity consulting, Cloud services">
+    <meta name="description" content="Crecita Services — DevOps, MLOps, AIOps, LLMOps, AgentAIOps, GenAIOps & Cybersecurity. Full-spectrum AI-native operations.">
+    <meta name="keywords" content="DevOps, MLOps, AIOps, LLMOps, AgentAIOps, GenAIOps, Cybersecurity, AI operations">
     <meta name="author" content="Crecita">
-    <title>Our Services - Crecita</title>
-    
-    <!-- Preconnect for better performance -->
+    <title>Services — Crecita</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="assets/Crecita Logo.PNG" alt="Crecita Logo" class="brand-logo">
+                <img src="assets/Crecita Logo.PNG" alt="Crecita" class="brand-logo">
                 <span>Crecita</span>
             </a>
-            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -37,17 +29,9 @@
                 <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            
             <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
@@ -56,154 +40,480 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content animate-on-scroll">
-                <h1>Our Services</h1>
-                <p>Comprehensive technology solutions to accelerate your business</p>
+                <span class="section-label" style="justify-content: center; margin-bottom: 0.75rem;"><i class="fas fa-layer-group"></i> 7 Service Domains</span>
+                <h1>Full-Spectrum Operations</h1>
+                <p>From traditional DevOps to autonomous AI agents — one partner across your entire technology stack.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="section">
+    <!-- Quick Nav -->
+    <div style="position: sticky; top: 64px; z-index: 100; background: var(--bg-primary); border-bottom: 1px solid var(--border); padding: 0.625rem 0;">
         <div class="container">
-            <div class="text-center mb-xl animate-on-scroll">
-                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">Technology Solutions That Drive Results</h2>
-                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
-                    We specialize in three critical domains that form the backbone of modern digital infrastructure. 
-                    Our comprehensive approach ensures your technology stack is optimized, secure, and scalable.
-                </p>
-            </div>
-            
-            <div class="grid grid-3 gap-lg">
-                <div class="card text-center animate-on-scroll">
-                    <div style="color: var(--primary); font-size: 3rem; margin-bottom: var(--space-md);">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3 class="card-title">DevOps</h3>
-                    <p class="card-description">
-                        Streamline development and operations with automated pipelines, 
-                        infrastructure as code, and continuous integration/deployment.
-                    </p>
-                </div>
-                
-                <div class="card text-center animate-on-scroll">
-                    <div style="color: var(--accent); font-size: 3rem; margin-bottom: var(--space-md);">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="card-title">MLOps</h3>
-                    <p class="card-description">
-                        Deploy and manage machine learning models at scale with robust 
-                        monitoring, version control, and automated ML pipelines.
-                    </p>
-                </div>
-                
-                <div class="card text-center animate-on-scroll">
-                    <div style="color: var(--success); font-size: 3rem; margin-bottom: var(--space-md);">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="card-title">Cybersecurity</h3>
-                    <p class="card-description">
-                        Protect your digital assets with comprehensive security solutions, 
-                        threat detection, and compliance frameworks.
-                    </p>
-                </div>
+            <div style="display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
+                <a href="#devops"        style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">DevOps</a>
+                <a href="#mlops"         style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">MLOps</a>
+                <a href="#aiops"         style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">AIOps</a>
+                <a href="#llmops"        style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">LLMOps</a>
+                <a href="#agentaiops"    style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">AgentAIOps</a>
+                <a href="#genaiops"      style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">GenAIOps</a>
+                <a href="#cybersecurity" style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">CyberSecurity</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- DevOps Services -->
-    <section class="section" id="devops" style="background: var(--bg-secondary);">
+    <!-- ===== 1. DEVOPS ===== -->
+    <section class="section" id="devops">
         <div class="container">
-            <div class="grid grid-2 gap-xl items-center">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll">
-                    <div class="flex items-center gap-md mb-lg">
-                        <div style="color: var(--primary); font-size: 2.5rem;">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <h2 style="font-size: 2.5rem; color: var(--text-primary);">DevOps Services</h2>
-                    </div>
-                    <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-lg); line-height: 1.7;">
-                        Transform your software delivery pipeline with our comprehensive DevOps solutions. 
-                        We help organizations achieve faster deployment cycles, improved reliability, 
-                        and reduced operational overhead through automation and best practices.
+                    <div class="icon-wrap icon-wrap-lg icon-blue mb-md"><i class="fas fa-code-branch"></i></div>
+                    <span class="section-label">01 — DevOps</span>
+                    <h2 class="section-title">Faster Delivery.<br>Reliable Infrastructure.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        We design and implement end-to-end DevOps practices that eliminate the friction between development and operations. From first commit to production — automated, monitored, and repeatable.
                     </p>
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-arrow-right"></i>
-                        Get Started with DevOps
-                    </a>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> CI/CD pipeline design with Jenkins, GitLab CI, GitHub Actions</li>
+                        <li><i class="fas fa-check-circle"></i> Infrastructure as Code using Terraform, Pulumi, CloudFormation</li>
+                        <li><i class="fas fa-check-circle"></i> Container orchestration with Docker & Kubernetes (EKS, GKE, AKS)</li>
+                        <li><i class="fas fa-check-circle"></i> Observability: Prometheus, Grafana, ELK Stack, Datadog</li>
+                        <li><i class="fas fa-check-circle"></i> GitOps workflows with ArgoCD and Flux</li>
+                        <li><i class="fas fa-check-circle"></i> Disaster recovery and SLA-driven incident response</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Get a DevOps Assessment</a>
                 </div>
-                
                 <div class="animate-on-scroll">
-                    <div class="grid gap-md">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div class="card">
-                            <div class="flex items-start gap-md">
-                                <div style="color: var(--primary); font-size: 1.5rem; margin-top: var(--space-xs);">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-blue" style="flex-shrink: 0;"><i class="fas fa-rocket"></i></div>
                                 <div>
-                                    <h4 style="margin-bottom: var(--space-xs); color: var(--text-primary);">CI/CD Pipeline Development</h4>
-                                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
-                                        Automated build, test, and deployment pipelines using Jenkins, GitLab CI, 
-                                        GitHub Actions, and Azure DevOps.
-                                    </p>
+                                    <div class="card-title">CI/CD Pipeline Development</div>
+                                    <p class="card-description">Automated build, test, and deploy pipelines that cut release cycles from days to minutes.</p>
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="card">
-                            <div class="flex items-start gap-md">
-                                <div style="color: var(--primary); font-size: 1.5rem; margin-top: var(--space-xs);">
-                                    <i class="fas fa-server"></i>
-                                </div>
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-blue" style="flex-shrink: 0;"><i class="fas fa-server"></i></div>
                                 <div>
-                                    <h4 style="margin-bottom: var(--space-xs); color: var(--text-primary);">Infrastructure as Code</h4>
-                                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
-                                        Terraform, CloudFormation, and Pulumi implementations for 
-                                        scalable, version-controlled infrastructure management.
-                                    </p>
+                                    <div class="card-title">Infrastructure as Code</div>
+                                    <p class="card-description">Version-controlled, reproducible infrastructure across any cloud or hybrid environment.</p>
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="card">
-                            <div class="flex items-start gap-md">
-                                <div style="color: var(--primary); font-size: 1.5rem; margin-top: var(--space-xs);">
-                                    <i class="fab fa-docker"></i>
-                                </div>
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-blue" style="flex-shrink: 0;"><i class="fab fa-docker"></i></div>
                                 <div>
-                                    <h4 style="margin-bottom: var(--space-xs); color: var(--text-primary);">Containerization & Orchestration</h4>
-                                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
-                                        Docker containerization and Kubernetes orchestration for 
-                                        scalable, portable application deployment.
-                                    </p>
+                                    <div class="card-title">Containerisation & Orchestration</div>
+                                    <p class="card-description">Kubernetes-native deployments with autoscaling, service mesh, and zero-downtime rollouts.</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">Jenkins</span><span class="tech-tag">GitLab CI</span><span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">ArgoCD</span><span class="tech-tag">Prometheus</span><span class="tech-tag">Grafana</span>
+                        <span class="tech-tag">Ansible</span><span class="tech-tag">Helm</span><span class="tech-tag">Vault</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section">
+    <!-- ===== 2. MLOPS ===== -->
+    <section class="section-alt" id="mlops">
         <div class="container">
-            <div class="text-center animate-on-scroll">
-                <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: var(--text-primary);">
-                    Ready to Transform Your Technology?
-                </h2>
-                <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Let's discuss how our expert services can accelerate your digital transformation 
-                    and drive measurable business results.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll" style="order: 2;">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-amber" style="flex-shrink: 0;"><i class="fas fa-diagram-project"></i></div>
+                                <div>
+                                    <div class="card-title">ML Pipeline Automation</div>
+                                    <p class="card-description">Automated data ingestion, feature engineering, training, evaluation, and deployment pipelines.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-amber" style="flex-shrink: 0;"><i class="fas fa-code-compare"></i></div>
+                                <div>
+                                    <div class="card-title">Model Registry & Versioning</div>
+                                    <p class="card-description">Track experiments, compare model performance, and promote models through staging to production.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-amber" style="flex-shrink: 0;"><i class="fas fa-chart-line"></i></div>
+                                <div>
+                                    <div class="card-title">Production Monitoring & Drift Detection</div>
+                                    <p class="card-description">Continuous monitoring for data drift, concept drift, and model degradation with auto-retraining triggers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">MLflow</span><span class="tech-tag">Kubeflow</span><span class="tech-tag">SageMaker</span>
+                        <span class="tech-tag">Airflow</span><span class="tech-tag">Feature Store</span><span class="tech-tag">DVC</span>
+                        <span class="tech-tag">BentoML</span><span class="tech-tag">Seldon</span><span class="tech-tag">Evidently AI</span>
+                    </div>
+                </div>
+                <div class="animate-on-scroll" style="order: 1;">
+                    <div class="icon-wrap icon-wrap-lg icon-amber mb-md"><i class="fas fa-brain"></i></div>
+                    <span class="section-label">02 — MLOps</span>
+                    <h2 class="section-title">Models in Production.<br>Not in Notebooks.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        We bridge the gap between data science experimentation and reliable production ML systems. Your models get versioned, monitored, and continuously improved — at any scale.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> End-to-end ML pipeline design and automation</li>
+                        <li><i class="fas fa-check-circle"></i> Feature store setup and governance</li>
+                        <li><i class="fas fa-check-circle"></i> Model registry, A/B testing, and shadow deployments</li>
+                        <li><i class="fas fa-check-circle"></i> Data and model drift monitoring with alerting</li>
+                        <li><i class="fas fa-check-circle"></i> Automated retraining workflows</li>
+                        <li><i class="fas fa-check-circle"></i> ML governance and reproducibility frameworks</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Discuss Your ML Stack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. AIOPS ===== -->
+    <section class="section" id="aiops">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll">
+                    <div class="icon-wrap icon-wrap-lg icon-violet mb-md"><i class="fas fa-robot"></i></div>
+                    <span class="section-label">03 — AIOps</span>
+                    <h2 class="section-title">Self-Healing IT.<br>AI-Powered Ops.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        AIOps applies machine learning to IT operations data — correlating events, predicting failures, and automating remediation before incidents escalate. Reduce MTTD and MTTR dramatically.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> Intelligent alert correlation and noise reduction</li>
+                        <li><i class="fas fa-check-circle"></i> Predictive anomaly detection on metrics and logs</li>
+                        <li><i class="fas fa-check-circle"></i> Automated root cause analysis and topology mapping</li>
+                        <li><i class="fas fa-check-circle"></i> IT event management and ITSM integration</li>
+                        <li><i class="fas fa-check-circle"></i> Capacity planning and performance forecasting</li>
+                        <li><i class="fas fa-check-circle"></i> Self-healing runbook automation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Explore AIOps</a>
+                </div>
+                <div class="animate-on-scroll">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-violet" style="flex-shrink: 0;"><i class="fas fa-bell-slash"></i></div>
+                                <div>
+                                    <div class="card-title">Alert Correlation & Noise Reduction</div>
+                                    <p class="card-description">Cut alert fatigue by up to 85% using ML-driven event correlation and suppression.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-violet" style="flex-shrink: 0;"><i class="fas fa-triangle-exclamation"></i></div>
+                                <div>
+                                    <div class="card-title">Predictive Incident Management</div>
+                                    <p class="card-description">Detect anomalies in time-series data before they become outages. Predict failure patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-violet" style="flex-shrink: 0;"><i class="fas fa-gears"></i></div>
+                                <div>
+                                    <div class="card-title">Automated Remediation</div>
+                                    <p class="card-description">Runbook automation and self-healing workflows that resolve known issues without human intervention.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">Dynatrace</span><span class="tech-tag">Moogsoft</span><span class="tech-tag">BigPanda</span>
+                        <span class="tech-tag">Splunk ITSI</span><span class="tech-tag">ServiceNow</span><span class="tech-tag">PagerDuty</span>
+                        <span class="tech-tag">Elastic</span><span class="tech-tag">Datadog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. LLMOPS ===== -->
+    <section class="section-alt" id="llmops">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll" style="order: 2;">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-emerald" style="flex-shrink: 0;"><i class="fas fa-database"></i></div>
+                                <div>
+                                    <div class="card-title">RAG Pipeline Architecture</div>
+                                    <p class="card-description">Retrieval-Augmented Generation systems with vector stores, chunking strategies, and re-ranking.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-emerald" style="flex-shrink: 0;"><i class="fas fa-sliders"></i></div>
+                                <div>
+                                    <div class="card-title">Fine-Tuning & Adaptation</div>
+                                    <p class="card-description">Domain-specific model fine-tuning using LoRA, QLoRA, and PEFT techniques for enterprise use cases.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-emerald" style="flex-shrink: 0;"><i class="fas fa-gauge-high"></i></div>
+                                <div>
+                                    <div class="card-title">LLM Observability & Evaluation</div>
+                                    <p class="card-description">Track latency, cost, hallucination rate, and output quality across model versions in production.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">LangChain</span><span class="tech-tag">LlamaIndex</span><span class="tech-tag">vLLM</span>
+                        <span class="tech-tag">Vertex AI</span><span class="tech-tag">Bedrock</span><span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">Weaviate</span><span class="tech-tag">LoRA / QLoRA</span><span class="tech-tag">LangSmith</span>
+                    </div>
+                </div>
+                <div class="animate-on-scroll" style="order: 1;">
+                    <div class="icon-wrap icon-wrap-lg icon-emerald mb-md"><i class="fas fa-comments"></i></div>
+                    <span class="section-label">04 — LLMOps</span>
+                    <h2 class="section-title">LLMs Built to Last<br>in Production.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        Deploying an LLM is the easy part. Making it reliable, cost-efficient, and safe at enterprise scale is where Crecita steps in. We handle the full LLM operations lifecycle.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> LLM deployment on cloud, on-prem, and edge</li>
+                        <li><i class="fas fa-check-circle"></i> RAG pipeline design with vector database integration</li>
+                        <li><i class="fas fa-check-circle"></i> Fine-tuning and instruction tuning workflows</li>
+                        <li><i class="fas fa-check-circle"></i> Prompt engineering and version management</li>
+                        <li><i class="fas fa-check-circle"></i> LLM observability: latency, cost, hallucination tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Model serving optimisation with quantisation and batching</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Build Your LLM Stack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 5. AGENTAIOPS ===== -->
+    <section class="section" id="agentaiops">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll">
+                    <div class="icon-wrap icon-wrap-lg icon-rose mb-md"><i class="fas fa-sitemap"></i></div>
+                    <span class="section-label">05 — AgentAIOps</span>
+                    <h2 class="section-title">Autonomous Agents.<br>Orchestrated at Scale.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        The next frontier of operations is agentic — AI systems that plan, reason, and act across your infrastructure autonomously. We design, deploy, and operate multi-agent frameworks for real enterprise workloads.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> Multi-agent system architecture and design</li>
+                        <li><i class="fas fa-check-circle"></i> Autonomous incident detection, triage, and remediation agents</li>
+                        <li><i class="fas fa-check-circle"></i> Agentic workflows for IT operations and DevSecOps</li>
+                        <li><i class="fas fa-check-circle"></i> Tool-use and API integration for agents</li>
+                        <li><i class="fas fa-check-circle"></i> Agent observability, tracing, and guardrails</li>
+                        <li><i class="fas fa-check-circle"></i> Human-in-the-loop approval workflows</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Explore Agentic AI</a>
+                </div>
+                <div class="animate-on-scroll">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-rose" style="flex-shrink: 0;"><i class="fas fa-network-wired"></i></div>
+                                <div>
+                                    <div class="card-title">Multi-Agent Architecture</div>
+                                    <p class="card-description">Design supervisor-worker agent hierarchies that coordinate complex, multi-step tasks across systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-rose" style="flex-shrink: 0;"><i class="fas fa-wrench"></i></div>
+                                <div>
+                                    <div class="card-title">Tool-Use & API Integration</div>
+                                    <p class="card-description">Equip agents with real-world tools: search, code execution, API calls, databases, and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-rose" style="flex-shrink: 0;"><i class="fas fa-eye"></i></div>
+                                <div>
+                                    <div class="card-title">Agent Observability & Safety</div>
+                                    <p class="card-description">Full tracing, logging, and guardrails to ensure agents behave predictably and safely in production.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">AutoGen</span><span class="tech-tag">CrewAI</span><span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">LangChain</span><span class="tech-tag">OpenAI API</span><span class="tech-tag">Anthropic</span>
+                        <span class="tech-tag">LangSmith</span><span class="tech-tag">Temporal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. GENAIOPS ===== -->
+    <section class="section-alt" id="genaiops">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll" style="order: 2;">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-cyan" style="flex-shrink: 0;"><i class="fas fa-shield-halved"></i></div>
+                                <div>
+                                    <div class="card-title">Responsible AI Governance</div>
+                                    <p class="card-description">Model cards, bias audits, fairness metrics, and governance frameworks aligned to EU AI Act and enterprise policy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-cyan" style="flex-shrink: 0;"><i class="fas fa-building-columns"></i></div>
+                                <div>
+                                    <div class="card-title">Enterprise GenAI Deployment</div>
+                                    <p class="card-description">Scalable deployment of generative AI models with cost control, rate limiting, and multi-tenant isolation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-cyan" style="flex-shrink: 0;"><i class="fas fa-lock"></i></div>
+                                <div>
+                                    <div class="card-title">Output Guardrails & Safety</div>
+                                    <p class="card-description">Input/output filtering, jailbreak detection, PII redaction, and policy-enforcement layers for GenAI systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">Azure OpenAI</span><span class="tech-tag">Amazon Bedrock</span><span class="tech-tag">Google Gemini</span>
+                        <span class="tech-tag">Guardrails AI</span><span class="tech-tag">NeMo Guardrails</span><span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">Weights &amp; Biases</span><span class="tech-tag">Vertex AI</span>
+                    </div>
+                </div>
+                <div class="animate-on-scroll" style="order: 1;">
+                    <div class="icon-wrap icon-wrap-lg icon-cyan mb-md"><i class="fas fa-magic"></i></div>
+                    <span class="section-label">06 — GenAIOps</span>
+                    <h2 class="section-title">Generative AI.<br>Governed. Scalable. Safe.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        GenAI is moving fast — and most organisations are deploying it faster than they can govern it. Crecita brings operational rigour to generative AI: deployment, monitoring, safety, and compliance.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> Enterprise GenAI platform deployment and configuration</li>
+                        <li><i class="fas fa-check-circle"></i> Responsible AI framework implementation</li>
+                        <li><i class="fas fa-check-circle"></i> Model cards, risk assessments, and bias audits</li>
+                        <li><i class="fas fa-check-circle"></i> Output safety guardrails and content filtering</li>
+                        <li><i class="fas fa-check-circle"></i> Cost governance and token usage optimisation</li>
+                        <li><i class="fas fa-check-circle"></i> Regulatory alignment: EU AI Act, NIST AI RMF</li>
+                    </ul>
+                    <div class="info-box mb-lg">
+                        <strong>Emerging practice:</strong> GenAIOps is a frontier discipline. Crecita is among the first firms to formalise it as a structured service offering — giving our clients a head start on AI governance.
+                    </div>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Govern Your GenAI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. CYBERSECURITY ===== -->
+    <section class="section" id="cybersecurity">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll">
+                    <div class="icon-wrap icon-wrap-lg icon-green mb-md"><i class="fas fa-shield-halved"></i></div>
+                    <span class="section-label">07 — CyberSecurity</span>
+                    <h2 class="section-title">ISACA Certified.<br>Enterprise Grade.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        Our cybersecurity practice is backed by resources holding the most respected certifications in the industry. From governance to penetration testing — we protect what matters most.
+                    </p>
+
+                    <!-- Cert badges -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; margin-bottom: 1.5rem;">
+                        <div class="cert-badge"><i class="fas fa-certificate"></i> CISA — Certified Information Systems Auditor</div>
+                        <div class="cert-badge"><i class="fas fa-certificate"></i> CISM — Certified Information Security Manager</div>
+                        <div class="cert-badge"><i class="fas fa-certificate"></i> CRISC — Certified in Risk &amp; Info Systems Control</div>
+                        <div class="cert-badge"><i class="fas fa-certificate"></i> AAIA — AI Auditor &amp; Assessor</div>
+                    </div>
+
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> GRC — Governance, Risk & Compliance frameworks</li>
+                        <li><i class="fas fa-check-circle"></i> Penetration testing (network, web, cloud, API)</li>
+                        <li><i class="fas fa-check-circle"></i> SOC design, implementation, and operations</li>
+                        <li><i class="fas fa-check-circle"></i> SIEM setup, tuning, and threat hunting</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud security posture management (CSPM)</li>
+                        <li><i class="fas fa-check-circle"></i> AI security — securing ML pipelines and LLM applications</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Security Assessment</a>
+                </div>
+                <div class="animate-on-scroll">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-green" style="flex-shrink: 0;"><i class="fas fa-clipboard-check"></i></div>
+                                <div>
+                                    <div class="card-title">GRC & Compliance</div>
+                                    <p class="card-description">ISO 27001, SOC 2, GDPR, HIPAA, PCI-DSS compliance programs designed and managed by certified professionals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-green" style="flex-shrink: 0;"><i class="fas fa-magnifying-glass"></i></div>
+                                <div>
+                                    <div class="card-title">Penetration Testing</div>
+                                    <p class="card-description">Red team exercises, web application testing, cloud configuration review, and API security assessments.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-green" style="flex-shrink: 0;"><i class="fas fa-tower-broadcast"></i></div>
+                                <div>
+                                    <div class="card-title">SOC & SIEM Operations</div>
+                                    <p class="card-description">24/7 security operations centre setup with Splunk, QRadar, or Microsoft Sentinel — threat detection and response.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">Splunk</span><span class="tech-tag">QRadar</span><span class="tech-tag">Microsoft Sentinel</span>
+                        <span class="tech-tag">Tenable</span><span class="tech-tag">Qualys</span><span class="tech-tag">CrowdStrike</span>
+                        <span class="tech-tag">Wiz</span><span class="tech-tag">AWS Security Hub</span><span class="tech-tag">Palo Alto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="text-center animate-on-scroll" style="max-width: 600px; margin: 0 auto;">
+                <span class="section-label"><i class="fas fa-handshake"></i> Work With Us</span>
+                <h2 class="section-title">Not sure where to start?</h2>
+                <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem;">
+                    Let's have a 30-minute conversation about your infrastructure, AI roadmap, or security posture. No pitch — just honest advice.
                 </p>
-                <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
-                    <a href="contact.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-comments"></i>
-                        Start Your Project
-                    </a>
-                    <a href="case-studies.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-chart-bar"></i>
-                        View Success Stories
-                    </a>
+                <div style="display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-large"><i class="fas fa-calendar-check"></i> Book a Consultation</a>
+                    <a href="case-studies.html" class="btn btn-secondary btn-large"><i class="fas fa-chart-bar"></i> See Our Work</a>
                 </div>
             </div>
         </div>
@@ -213,56 +523,54 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Crecita</h3>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: var(--space-md);">
-                        Empowering your digital future with cutting-edge technology solutions.
-                    </p>
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 0.75rem; display: inline-flex;">
+                        <img src="assets/Crecita Logo.PNG" alt="Crecita" class="brand-logo" style="filter: brightness(10);">
+                        <span>Crecita</span>
+                    </a>
+                    <p>AI-Native Operations & Cybersecurity for modern enterprises. Trusted. Certified. Proven.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 style="margin-bottom: var(--space-md); color: white;">Quick Links</h4>
+                <div>
+                    <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="case-studies.html">Case Studies</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 style="margin-bottom: var(--space-md); color: white;">Services</h4>
+                <div>
+                    <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#devops">DevOps</a></li>
-                        <li><a href="services.html#mlops">MLOps</a></li>
-                        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
-                        <li><a href="contact.html">Consulting</a></li>
+                        <li><a href="#devops">DevOps</a></li>
+                        <li><a href="#mlops">MLOps</a></li>
+                        <li><a href="#aiops">AIOps</a></li>
+                        <li><a href="#llmops">LLMOps</a></li>
+                        <li><a href="#agentaiops">AgentAIOps</a></li>
+                        <li><a href="#genaiops">GenAIOps</a></li>
+                        <li><a href="#cybersecurity">CyberSecurity</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 style="margin-bottom: var(--space-md); color: white;">Contact Info</h4>
-                    <div style="color: rgba(255, 255, 255, 0.8);">
-                        <p style="display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-envelope"></i>
-                            <span>reach@crecita-it.com</span>
-                        </p>
-                        <p style="display: flex; align-items: center; gap: var(--space-xs);">
-                            <i class="fas fa-phone"></i>
-                            <span>+91 9096 451 662</span>
-                        </p>
-                    </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:reach@crecita-it.com" style="color: inherit; text-decoration: none;">reach@crecita-it.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+91 9096 451 662</span></div>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Crecita. All rights reserved.</p>
+                <p>&copy; 2026 Crecita. All rights reserved.</p>
+                <p>ISACA CISA · CISM · CRISC · AAIA Certified</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/app.js"></script>
+    <style>
+        .service-nav-link:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+            border-color: var(--border) !important;
+        }
+    </style>
 </body>
 </html>

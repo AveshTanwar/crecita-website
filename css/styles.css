@@ -130,6 +130,8 @@ button { font-family: inherit; }
 .section-alt {
     padding: var(--space-3xl) 0;
     background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .text-center { text-align: center; }
@@ -305,6 +307,8 @@ button { font-family: inherit; }
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card::after {
@@ -375,20 +379,19 @@ button { font-family: inherit; }
 .tech-tag {
     display: inline-block;
     padding: 0.2rem 0.625rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
+    background: rgba(59, 130, 246, 0.06);
+    border: 1px solid rgba(59, 130, 246, 0.18);
     border-radius: var(--radius-full);
     font-size: 0.6875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--primary);
     transition: var(--transition-fast);
     cursor: default;
 }
 
 .tech-tag:hover {
-    border-color: var(--primary);
-    color: var(--primary);
     background: var(--primary-light);
+    border-color: var(--primary);
 }
 
 .cert-badge {
@@ -631,8 +634,7 @@ button { font-family: inherit; }
    PAGE HEADER
    =============================================== */
 .page-header {
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 60%, var(--accent) 100%);
     padding: calc(var(--space-3xl) + 64px) 0 var(--space-xl);
     text-align: center;
     position: relative;
@@ -643,8 +645,20 @@ button { font-family: inherit; }
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%);
     pointer-events: none;
+}
+
+.page-header .section-label {
+    color: rgba(255,255,255,0.7);
+}
+
+.page-header-content h1 {
+    color: white;
+}
+
+.page-header-content p {
+    color: rgba(255,255,255,0.82);
 }
 
 .page-header-content {

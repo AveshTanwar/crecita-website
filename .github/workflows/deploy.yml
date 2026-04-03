@@ -1,0 +1,32 @@
+name: Deploy to crecita-it.com
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # 1. Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Deploy to GoDaddy public_html
+      - name: Deploy → public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps
+          port: 21
+          local-dir: ./
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            README.md

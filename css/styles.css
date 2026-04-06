@@ -877,11 +877,25 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
+   GLOBAL MOBILE SAFETY
+   =============================================== */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+* { box-sizing: border-box; }
+
+/* ===============================================
    RESPONSIVE — LARGE TABLET  (≤1200px)
    =============================================== */
 @media (max-width: 1200px) {
     /* Service cards index: 4 col → 2 col */
     .svc-index-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* r-grid utility: tablet overrides */
+    .r-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 1.25rem !important; }
+    .r-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+    .r-grid-6 { grid-template-columns: repeat(3, 1fr) !important; gap: 1rem !important; }
 }
 
 /* ===============================================
@@ -891,6 +905,10 @@ button { font-family: inherit; }
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .grid-7 { grid-template-columns: repeat(3, 1fr); }
     .footer-content { grid-template-columns: 1fr 1fr; }
+
+    /* r-grid utility: 1024px */
+    .r-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    .r-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
 
     /* 4-col inline grids → 2 cols */
     div[style*="grid-template-columns: repeat(4, 1fr)"] {
@@ -904,7 +922,6 @@ button { font-family: inherit; }
     /* svc-card-wrap: reduce padding on tablet */
     .svc-card-wrap { padding: 2rem !important; gap: 2.5rem !important; }
 
-    /* About numbers: keep 4-col on tablet (they're small cards) */
     .hero-subtitle { max-width: 520px; }
 }
 
@@ -989,6 +1006,20 @@ button { font-family: inherit; }
     /* --- Grid utility classes --- */
     .grid-2, .grid-3, .grid-4, .grid-7 { grid-template-columns: 1fr; }
 
+    /* --- r-grid responsive utility classes --- */
+    .r-grid-2 { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .r-grid-3 { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
+    .r-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
+    .r-grid-6 { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+    /* Form field grids stay compact when stacked */
+    .r-grid-form { gap: 1rem !important; }
+    /* Reset order for alternating case-study/service sections */
+    .r-grid-2 > .animate-on-scroll[style*="order: 2"] { order: 1 !important; }
+    .r-grid-2 > .animate-on-scroll[style*="order: 1"] { order: 2 !important; }
+
+    /* --- Nav: tighter padding on mobile --- */
+    .nav-container { padding: 0.75rem 1rem; }
+
     /* --- Footer --- */
     .footer { padding: 3rem 0 1.5rem; }
     .footer-content { grid-template-columns: 1fr; gap: 2rem; }
@@ -1015,13 +1046,19 @@ button { font-family: inherit; }
     /* Service index cards → 1 col on small phones */
     .svc-index-grid { grid-template-columns: 1fr !important; }
 
-    /* Stats strip → 2×2 grid keeps ok, no change needed */
+    /* r-grid: small phone overrides */
+    .r-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    .r-grid-3 { grid-template-columns: 1fr !important; }
+    .r-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
 
     /* Tighten card padding */
     .service-card { padding: 1.25rem; }
     .svc-card-wrap { padding: 1.25rem !important; }
+    .card { padding: 1rem; }
 
     /* Prevent text overflow on very small screens */
     .hero-badge span { word-break: break-word; }
     .tech-tag { font-size: 0.6875rem; padding: 3px 8px; }
+    .section-title { font-size: 1.375rem !important; }
+    .btn-large { width: 100%; justify-content: center; max-width: 300px; }
 }

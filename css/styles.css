@@ -760,8 +760,15 @@ button { font-family: inherit; }
 
 .stat { text-align: center; }
 
+.stat-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
 .stat-number {
-    display: block;
     font-size: 2.25rem;
     font-weight: 800;
     color: var(--primary);
@@ -769,10 +776,17 @@ button { font-family: inherit; }
     line-height: 1.1;
 }
 
+.stat-suffix {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+}
+
 .stat-label {
     color: var(--text-muted);
     font-size: 0.8125rem;
-    margin-top: 4px;
+    margin-top: 0;
     letter-spacing: 0.01em;
 }
 
@@ -961,7 +975,8 @@ html, body {
     .hero-buttons { flex-direction: column; align-items: center; }
     .hero-buttons .btn { width: 100%; max-width: 300px; justify-content: center; }
     .hero-stats   { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-    .stat-number  { font-size: 1.875rem; }
+    .stat-number  { font-size: 1.75rem; }
+    .stat-suffix  { font-size: 1.25rem; }
 
     /* --- Page headers --- */
     .page-header { padding: 3.5rem 0 2.5rem; }

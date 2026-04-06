@@ -44,7 +44,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 $fullName    = "$firstName $lastName";
 $toAddress   = 'reach@crecita-it.com';
-$fromAddress = 'noreply@crecita-it.com';
+$fromAddress = 'reach@crecita-it.com';
+$envelopeSender = '-f reach@crecita-it.com';
 
 /* ================================================
    1. NOTIFICATION EMAIL → Crecita team
@@ -87,8 +88,10 @@ $notifyHeaders  = "MIME-Version: 1.0\r\n";
 $notifyHeaders .= "Content-Type: text/html; charset=UTF-8\r\n";
 $notifyHeaders .= "From: Crecita Website <$fromAddress>\r\n";
 $notifyHeaders .= "Reply-To: $fullName <$email>\r\n";
+$notifyHeaders .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+$notifyHeaders .= "Date: " . date('r') . "\r\n";
 
-$sent = mail($toAddress, $notifySubject, $notifyHtml, $notifyHeaders);
+$sent = mail($toAddress, $notifySubject, $notifyHtml, $notifyHeaders, $envelopeSender);
 
 if (!$sent) {
     http_response_code(500);
@@ -152,8 +155,10 @@ $replyHeaders  = "MIME-Version: 1.0\r\n";
 $replyHeaders .= "Content-Type: text/html; charset=UTF-8\r\n";
 $replyHeaders .= "From: Crecita <reach@crecita-it.com>\r\n";
 $replyHeaders .= "Reply-To: Crecita <reach@crecita-it.com>\r\n";
+$replyHeaders .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+$replyHeaders .= "Date: " . date('r') . "\r\n";
 
-mail($email, $replySubject, $replyHtml, $replyHeaders);
+$replySent = mail($email, $replySubject, $replyHtml, $replyHeaders, $envelopeSender);
 
-echo json_encode(['ok' => true]);
+echo json_encode(['ok' => true, 'reply_sent' => $replySent]);
 ?>

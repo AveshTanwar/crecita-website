@@ -55,6 +55,7 @@ button { font-family: inherit; }
     --svc-llmops:   #10b981;
     --svc-agent:    #f43f5e;
     --svc-genai:    #06b6d4;
+    --svc-dataops:  #f97316;
     --svc-cyber:    #22c55e;
 
     /* Light Theme */
@@ -297,13 +298,14 @@ button { font-family: inherit; }
     line-height: 1.6;
 }
 
-/* Service Card — with accent top-border on hover */
+/* Service Card — colored top border, visible shadow */
 .service-card {
     background: var(--bg-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-lg);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
+    border-top: 3px solid var(--svc-color, var(--primary));
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -311,23 +313,21 @@ button { font-family: inherit; }
     flex-direction: column;
 }
 
-.service-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--svc-color, var(--primary));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+.service-card:hover {
+    border-color: color-mix(in srgb, var(--svc-color, var(--primary)) 30%, transparent);
+    border-top-color: var(--svc-color, var(--primary));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
 }
 
-.service-card:hover::after { transform: scaleX(1); }
-
-.service-card:hover {
-    border-color: transparent;
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
+/* Service Section Card — for services.html full-section wrappers */
+.svc-card-wrap {
+    background: var(--bg-primary);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--svc-color, var(--primary));
+    padding: 3rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 /* ===============================================
@@ -359,6 +359,7 @@ button { font-family: inherit; }
 .icon-emerald { background: rgba(16, 185, 129, 0.1);  color: #10b981; }
 .icon-rose    { background: rgba(244, 63, 94, 0.1);   color: #f43f5e; }
 .icon-cyan    { background: rgba(6, 182, 212, 0.1);   color: #06b6d4; }
+.icon-orange  { background: rgba(249, 115, 22, 0.1);  color: #f97316; }
 .icon-green   { background: rgba(34, 197, 94, 0.1);   color: #22c55e; }
 
 /* ===============================================

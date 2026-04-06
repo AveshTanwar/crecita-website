@@ -40,7 +40,7 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content animate-on-scroll">
-                <span class="section-label" style="justify-content: center; margin-bottom: 0.75rem;"><i class="fas fa-layer-group"></i> 7 Service Domains</span>
+                <span class="section-label" style="justify-content: center; margin-bottom: 0.75rem;"><i class="fas fa-layer-group"></i> 8 Service Domains</span>
                 <h1>Full-Spectrum Operations</h1>
                 <p>From traditional DevOps to autonomous AI agents — one partner across your entire technology stack.</p>
             </div>
@@ -57,6 +57,7 @@
                 <a href="#llmops"        style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">LLMOps</a>
                 <a href="#agentaiops"    style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">AgentAIOps</a>
                 <a href="#genaiops"      style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">GenAIOps</a>
+                <a href="#dataops"       style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">DataOps</a>
                 <a href="#cybersecurity" style="white-space: nowrap; padding: 0.375rem 0.875rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: all 0.15s ease; border: 1px solid transparent;" class="service-nav-link">CyberSecurity</a>
             </div>
         </div>
@@ -65,7 +66,7 @@
     <!-- ===== 1. DEVOPS ===== -->
     <section class="section" id="devops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-devops); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll">
                     <div class="icon-wrap icon-wrap-lg icon-blue mb-md"><i class="fas fa-code-branch"></i></div>
                     <span class="section-label">01 — DevOps</span>
@@ -127,7 +128,7 @@
     <!-- ===== 2. MLOPS ===== -->
     <section class="section-alt" id="mlops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-mlops); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll" style="order: 2;">
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div class="card">
@@ -188,7 +189,7 @@
     <!-- ===== 3. AIOPS ===== -->
     <section class="section" id="aiops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-aiops); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll">
                     <div class="icon-wrap icon-wrap-lg icon-violet mb-md"><i class="fas fa-robot"></i></div>
                     <span class="section-label">03 — AIOps</span>
@@ -249,7 +250,7 @@
     <!-- ===== 4. LLMOPS ===== -->
     <section class="section-alt" id="llmops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-llmops); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll" style="order: 2;">
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div class="card">
@@ -310,7 +311,7 @@
     <!-- ===== 5. AGENTAIOPS ===== -->
     <section class="section" id="agentaiops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-agent); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll">
                     <div class="icon-wrap icon-wrap-lg icon-rose mb-md"><i class="fas fa-sitemap"></i></div>
                     <span class="section-label">05 — AgentAIOps</span>
@@ -371,7 +372,7 @@
     <!-- ===== 6. GENAIOPS ===== -->
     <section class="section-alt" id="genaiops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-genai); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll" style="order: 2;">
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div class="card">
@@ -432,13 +433,74 @@
         </div>
     </section>
 
-    <!-- ===== 7. CYBERSECURITY ===== -->
-    <section class="section" id="cybersecurity">
+    <!-- ===== 7. DATAOPS ===== -->
+    <section class="section" id="dataops">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-dataops); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <div class="animate-on-scroll">
+                    <div class="icon-wrap icon-wrap-lg icon-orange mb-md"><i class="fas fa-database"></i></div>
+                    <span class="section-label">07 — DataOps</span>
+                    <h2 class="section-title">Data Pipelines That<br>Actually Work in Prod.</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
+                        Bad data upstream means broken models downstream. We bring DevOps-style engineering rigour to your data infrastructure — automated pipelines, observable quality checks, and governed lineage from source to consumption.
+                    </p>
+                    <ul class="feature-list mb-lg">
+                        <li><i class="fas fa-check-circle"></i> Data pipeline orchestration with Apache Airflow & Prefect</li>
+                        <li><i class="fas fa-check-circle"></i> Data quality engineering with Great Expectations & dbt tests</li>
+                        <li><i class="fas fa-check-circle"></i> Data lineage and catalog with OpenMetadata & Atlan</li>
+                        <li><i class="fas fa-check-circle"></i> Streaming pipelines with Kafka and Flink</li>
+                        <li><i class="fas fa-check-circle"></i> Lakehouse architecture on Delta Lake, Apache Iceberg</li>
+                        <li><i class="fas fa-check-circle"></i> Data observability and SLA monitoring</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Discuss Your Data Stack</a>
+                </div>
+                <div class="animate-on-scroll">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-orange" style="flex-shrink: 0;"><i class="fas fa-diagram-project"></i></div>
+                                <div>
+                                    <div class="card-title">Pipeline Orchestration</div>
+                                    <p class="card-description">Reliable, monitored data workflows that handle failures gracefully and alert on SLA breaches.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-orange" style="flex-shrink: 0;"><i class="fas fa-check-double"></i></div>
+                                <div>
+                                    <div class="card-title">Data Quality & Testing</div>
+                                    <p class="card-description">Automated quality gates that catch bad data before it reaches models or dashboards.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <div class="icon-wrap icon-orange" style="flex-shrink: 0;"><i class="fas fa-sitemap"></i></div>
+                                <div>
+                                    <div class="card-title">Lineage & Cataloguing</div>
+                                    <p class="card-description">Full end-to-end data lineage so every analyst and engineer knows where the data came from and what touched it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tech-tag">Apache Airflow</span><span class="tech-tag">dbt</span><span class="tech-tag">Prefect</span>
+                        <span class="tech-tag">Apache Kafka</span><span class="tech-tag">Delta Lake</span><span class="tech-tag">Apache Iceberg</span>
+                        <span class="tech-tag">Great Expectations</span><span class="tech-tag">OpenMetadata</span><span class="tech-tag">Spark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 8. CYBERSECURITY ===== -->
+    <section class="section-alt" id="cybersecurity">
+        <div class="container">
+            <div class="svc-card-wrap" style="--svc-color: var(--svc-cyber); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
                 <div class="animate-on-scroll">
                     <div class="icon-wrap icon-wrap-lg icon-green mb-md"><i class="fas fa-shield-halved"></i></div>
-                    <span class="section-label">07 — CyberSecurity</span>
+                    <span class="section-label">08 — CyberSecurity</span>
                     <h2 class="section-title">ISACA Certified.<br>Enterprise Grade.</h2>
                     <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
                         Our cybersecurity practice is backed by resources holding the most respected certifications in the industry. From governance to penetration testing — we protect what matters most.
@@ -548,6 +610,7 @@
                         <li><a href="#llmops">LLMOps</a></li>
                         <li><a href="#agentaiops">AgentAIOps</a></li>
                         <li><a href="#genaiops">GenAIOps</a></li>
+                        <li><a href="#dataops">DataOps</a></li>
                         <li><a href="#cybersecurity">CyberSecurity</a></li>
                     </ul>
                 </div>

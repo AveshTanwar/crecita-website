@@ -877,17 +877,48 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   RESPONSIVE
+   RESPONSIVE — LARGE TABLET  (≤1200px)
+   =============================================== */
+@media (max-width: 1200px) {
+    /* Service cards index: 4 col → 2 col */
+    .svc-index-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ===============================================
+   RESPONSIVE — TABLET  (≤1024px)
    =============================================== */
 @media (max-width: 1024px) {
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .grid-7 { grid-template-columns: repeat(3, 1fr); }
     .footer-content { grid-template-columns: 1fr 1fr; }
+
+    /* 4-col inline grids → 2 cols */
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
+    }
+    /* 3-col inline grids → 2 cols */
+    div[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    /* svc-card-wrap: reduce padding on tablet */
+    .svc-card-wrap { padding: 2rem !important; gap: 2.5rem !important; }
+
+    /* About numbers: keep 4-col on tablet (they're small cards) */
+    .hero-subtitle { max-width: 520px; }
 }
 
+/* ===============================================
+   RESPONSIVE — MOBILE  (≤768px)
+   =============================================== */
 @media (max-width: 768px) {
-    .container { padding: 0 var(--space-md); }
 
+    /* --- Layout --- */
+    .container { padding: 0 1.25rem; }
+    .section     { padding: 2.5rem 0; }
+    .section-alt { padding: 2.5rem 0; }
+
+    /* --- Navigation --- */
     .nav-menu {
         display: none;
         position: fixed;
@@ -898,26 +929,99 @@ button { font-family: inherit; }
         padding: var(--space-md);
         gap: 4px;
         box-shadow: var(--shadow);
+        z-index: 999;
+        max-height: calc(100vh - 65px);
+        overflow-y: auto;
     }
-
     .nav-menu.active { display: flex; }
-    .mobile-toggle { display: flex; }
+    .mobile-toggle   { display: flex; }
 
+    /* --- Hero --- */
+    .hero { padding: calc(3.5rem + 65px) 0 3rem; }
+    .hero-title   { font-size: clamp(1.875rem, 8vw, 2.5rem) !important; line-height: 1.15; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-badge   { font-size: 0.6875rem; white-space: normal; text-align: center; line-height: 1.6; }
     .hero-buttons { flex-direction: column; align-items: center; }
-    .hero-stats { gap: var(--space-lg); }
+    .hero-buttons .btn { width: 100%; max-width: 300px; justify-content: center; }
+    .hero-stats   { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .stat-number  { font-size: 1.875rem; }
 
-    .grid-2, .grid-3, .grid-4, .grid-7 {
-        grid-template-columns: 1fr;
+    /* --- Page headers --- */
+    .page-header { padding: 3.5rem 0 2.5rem; }
+    .page-header-content h1 { font-size: clamp(1.625rem, 7vw, 2.25rem) !important; }
+    .page-header-content p  { font-size: 1rem; }
+
+    /* --- Section headings --- */
+    .section-title    { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
+    .section-subtitle { font-size: 0.9375rem; }
+
+    /* --- Services index grid: 4 → 2 col --- */
+    .svc-index-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
 
-    .footer-content { grid-template-columns: 1fr; gap: var(--space-lg); }
-    .footer-bottom { flex-direction: column; text-align: center; }
+    /* --- Service section cards: 2-col → 1-col --- */
+    .svc-card-wrap {
+        grid-template-columns: 1fr !important;
+        padding: 1.5rem !important;
+        gap: 2rem !important;
+    }
+    /* Reset order so text comes before cards on mobile */
+    .svc-card-wrap > [style*="order: 2"] { order: 1 !important; }
+    .svc-card-wrap > [style*="order: 1"] { order: 2 !important; }
 
-    .section { padding: var(--space-2xl) 0; }
-    .section-alt { padding: var(--space-2xl) 0; }
+    /* --- All 2-col inline layouts → 1-col --- */
+    div[style*="grid-template-columns: 1fr 1fr"],
+    div[style*="grid-template-columns: 1fr 1.6fr"],
+    div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.75rem !important;
+    }
+
+    /* --- 3/4-col inline grids → 2-col on mobile --- */
+    div[style*="grid-template-columns: repeat(3, 1fr)"],
+    div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* --- Grid utility classes --- */
+    .grid-2, .grid-3, .grid-4, .grid-7 { grid-template-columns: 1fr; }
+
+    /* --- Footer --- */
+    .footer { padding: 3rem 0 1.5rem; }
+    .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom  { flex-direction: column; text-align: center; gap: 0.5rem; }
+    .footer-brand p { max-width: 100%; }
+
+    /* --- Cards --- */
+    .card { padding: 1.25rem; }
+
+    /* --- Info box --- */
+    .info-box { padding: 1rem 1.25rem; }
+
+    /* --- Cert badges grid (services CyberSecurity) --- */
+    div[style*="grid-template-columns: 1fr 1fr"] .cert-badge { font-size: 0.75rem; }
 }
 
+/* ===============================================
+   RESPONSIVE — SMALL MOBILE  (≤480px)
+   =============================================== */
 @media (max-width: 480px) {
-    .hero { padding: calc(var(--space-2xl) + 80px) 0 var(--space-2xl); }
-    .btn-large { padding: 0.75rem 1.5rem; font-size: 0.9375rem; }
+    .hero { padding: calc(3rem + 65px) 0 2.5rem; }
+    .btn-large { padding: 0.75rem 1.375rem; font-size: 0.9375rem; }
+
+    /* Service index cards → 1 col on small phones */
+    .svc-index-grid { grid-template-columns: 1fr !important; }
+
+    /* Stats strip → 2×2 grid keeps ok, no change needed */
+
+    /* Tighten card padding */
+    .service-card { padding: 1.25rem; }
+    .svc-card-wrap { padding: 1.25rem !important; }
+
+    /* Prevent text overflow on very small screens */
+    .hero-badge span { word-break: break-word; }
+    .tech-tag { font-size: 0.6875rem; padding: 3px 8px; }
 }

@@ -110,7 +110,7 @@
                         <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.375rem; letter-spacing: -0.02em;">Send us a message</h3>
                         <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1.75rem;">Fill in the details below and we'll get back to you with a tailored response.</p>
 
-                        <form id="contactForm" action="https://formspree.io/f/xpwzqnjy" method="POST" style="display: flex; flex-direction: column; gap: 1.125rem;">
+                        <form id="contactForm" action="contact-handler.php" method="POST" style="display: flex; flex-direction: column; gap: 1.125rem;">
 
                             <div class="r-grid-2 r-grid-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                 <div class="form-group">
@@ -260,9 +260,9 @@
 
     <script src="js/app.js"></script>
     <script>
-        const form = document.getElementById('contactForm');
+        const form       = document.getElementById('contactForm');
         const successMsg = document.getElementById('formSuccess');
-        const submitBtn = document.getElementById('submitBtn');
+        const submitBtn  = document.getElementById('submitBtn');
 
         if (form) {
             form.addEventListener('submit', async (e) => {
@@ -271,23 +271,30 @@
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
                 try {
-                    const res = await fetch(form.action, {
+                    const res  = await fetch('contact-handler.php', {
                         method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
+                        body:   new FormData(form)
                     });
-                    if (res.ok) {
-                        form.style.display = 'none';
+                    const data = await res.json();
+
+                    if (res.ok && data.ok) {
+                        form.style.display       = 'none';
                         successMsg.style.display = 'block';
                     } else {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
-                        alert('Something went wrong. Please email us directly at reach@crecita-it.com');
+                        throw new Error(data.error || 'Unknown error');
                     }
-                } catch {
+                } catch (err) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
-                    alert('Something went wrong. Please email us directly at reach@crecita-it.com');
+                    // Show a friendly inline error instead of an alert
+                    let errEl = document.getElementById('formError');
+                    if (!errEl) {
+                        errEl = document.createElement('p');
+                        errEl.id = 'formError';
+                        errEl.style.cssText = 'color:#ef4444;font-size:0.875rem;text-align:center;margin-top:0.5rem;';
+                        submitBtn.insertAdjacentElement('afterend', errEl);
+                    }
+                    errEl.textContent = 'Something went wrong. Please email us at reach@crecita-it.com';
                 }
             });
         }

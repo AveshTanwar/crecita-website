@@ -435,8 +435,46 @@
             .metrics-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
+    <style>body { padding-top: 65px !important; }</style>
 </head>
 <body>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-text"><i class="fas fa-cookie-bite"></i><p>We use cookies to improve your experience. By continuing, you accept our <a href="../privacy.html">cookie policy</a>.</p></div>
+        <div class="cookie-btns">
+            <button class="btn btn-primary btn-sm" onclick="setCookiePref('all')">Accept All</button>
+            <button class="btn btn-secondary btn-sm" onclick="setCookiePref('essential')">Reject Non-Essential</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand"><img src="../assets/Crecita Logo.PNG" alt="Crecita" class="brand-logo"><span>Crecita</span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../about.html" class="nav-link">About</a></li>
+                <li><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-dropdown">
+                    <a href="../case-studies.html" class="nav-link active">Case Studies <i class="fas fa-chevron-down" style="font-size:0.6rem;margin-left:3px;opacity:0.7;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../case-studies.html">All Case Studies</a></li>
+                        <li><a href="fintech-cicd.html">FinTech CI/CD Transformation</a></li>
+                        <li><a href="healthcare-mlops.html">Healthcare MLOps Platform</a></li>
+                        <li><a href="saas-aiops.html">SaaS AIOps Alert Reduction</a></li>
+                        <li><a href="legaltech-llmops.html">LegalTech LLMOps Cost Reduction</a></li>
+                        <li><a href="ecommerce-soc2.html">E-commerce SOC 2 Compliance</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
 
 <!-- ══════════════════════════════════════
      HERO
@@ -648,6 +686,11 @@
     <a href="../contact.html" class="btn-sticky">Book a Free Consultation →</a>
 </div>
 
+<script src="../js/app.js"></script>
+<script>
+    (function(){ if(!localStorage.getItem('cookiePref')){ var b=document.getElementById('cookieBanner'); if(b) b.style.display='flex'; } })();
+    function setCookiePref(pref){ localStorage.setItem('cookiePref',pref); var b=document.getElementById('cookieBanner'); if(b) b.style.display='none'; }
+</script>
 <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>

@@ -638,7 +638,7 @@ button { font-family: inherit; }
     position: relative;
 }
 
-/* Invisible bridge fills the gap so mouse doesn't lose hover when moving down */
+/* Hover bridge — keeps menu open while mouse moves down to it */
 .nav-dropdown::after {
     content: '';
     position: absolute;
@@ -651,14 +651,13 @@ button { font-family: inherit; }
 }
 .nav-dropdown:hover::after { display: block; }
 
+/* Desktop: simple display toggle (no visibility/opacity conflicts) */
 .nav-dropdown .dropdown-menu {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+    display: none;
     position: absolute;
     top: calc(100% + 6px);
     left: 50%;
-    transform: translateX(-50%) translateY(-6px);
+    transform: translateX(-50%);
     background: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -667,15 +666,12 @@ button { font-family: inherit; }
     padding: 0.5rem;
     min-width: 240px;
     z-index: 1100;
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
 }
 
 .nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+    display: block;
 }
 
 .nav-dropdown .dropdown-menu li a {
@@ -1218,27 +1214,25 @@ html, body {
 
     /* --- Dropdown: inline in mobile menu --- */
     .nav-dropdown .dropdown-menu {
-        position: static !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        transform: none !important;
-        box-shadow: none !important;
-        border: none !important;
-        border-left: 2px solid var(--border) !important;
-        background: transparent !important;
-        padding: 0.25rem 0 0.25rem 0.75rem !important;
-        min-width: auto !important;
-        margin: 4px 0 4px 0.5rem !important;
-        display: none;
-        pointer-events: auto !important;
-        transition: none !important;
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        background: transparent;
+        padding: 4px 0 4px 12px;
+        margin: 4px 0 4px 8px;
+        min-width: 0;
+        /* display:none already set by desktop rule — no override needed */
     }
-    .nav-dropdown.open .dropdown-menu { display: block !important; }
+    .nav-dropdown:hover .dropdown-menu { display: none; }
+    .nav-dropdown.open .dropdown-menu { display: block; }
     .nav-dropdown .dropdown-menu li a {
-        padding: 0.4rem 0.5rem !important;
-        font-size: 0.875rem !important;
-        color: var(--text-secondary) !important;
-        border-radius: 4px !important;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        border-radius: 4px;
+        white-space: normal;
     }
     .nav-dropdown.open > .nav-link .fa-chevron-down {
         transform: rotate(180deg);

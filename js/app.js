@@ -68,10 +68,12 @@ class CrecitaWebsite {
             }
         });
 
+        const isMobile = () => mobileBtn && window.getComputedStyle(mobileBtn).display !== 'none';
+
         // Mobile dropdown: tap to toggle submenu
         navMenu?.querySelectorAll('.nav-dropdown > .nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
+                if (isMobile()) {
                     e.preventDefault();
                     e.stopPropagation();
                     link.closest('.nav-dropdown').classList.toggle('open');
@@ -82,7 +84,7 @@ class CrecitaWebsite {
         // Close menu on regular nav-link click (but not dropdown toggles)
         navMenu?.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
-                if (link.closest('.nav-dropdown') && window.innerWidth <= 768) return;
+                if (link.closest('.nav-dropdown') && isMobile()) return;
                 navMenu.classList.remove('active');
                 navMenu.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
                 mobileBtn?.querySelectorAll('span').forEach(s => {

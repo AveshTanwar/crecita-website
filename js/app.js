@@ -68,10 +68,34 @@ class CrecitaWebsite {
             }
         });
 
-        // Close on link click
+        // Mobile dropdown: tap to toggle submenu
+        navMenu?.querySelectorAll('.nav-dropdown > .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    link.closest('.nav-dropdown').classList.toggle('open');
+                }
+            });
+        });
+
+        // Close menu on regular nav-link click (but not dropdown toggles)
         navMenu?.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.closest('.nav-dropdown') && window.innerWidth <= 768) return;
+                navMenu.classList.remove('active');
+                navMenu.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                mobileBtn?.querySelectorAll('span').forEach(s => {
+                    s.style.transform = ''; s.style.opacity = '';
+                });
+            });
+        });
+
+        // Close menu on submenu link click
+        navMenu?.querySelectorAll('.dropdown-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                navMenu.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
                 mobileBtn?.querySelectorAll('span').forEach(s => {
                     s.style.transform = ''; s.style.opacity = '';
                 });

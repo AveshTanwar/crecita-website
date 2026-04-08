@@ -1216,6 +1216,35 @@ html, body {
     /* --- Nav: tighter padding on mobile --- */
     .nav-container { padding: 0.75rem 1rem; }
 
+    /* --- Dropdown: inline in mobile menu --- */
+    .nav-dropdown .dropdown-menu {
+        position: static !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-left: 2px solid var(--border) !important;
+        background: transparent !important;
+        padding: 0.25rem 0 0.25rem 0.75rem !important;
+        min-width: auto !important;
+        margin: 4px 0 4px 0.5rem !important;
+        display: none;
+        pointer-events: auto !important;
+        transition: none !important;
+    }
+    .nav-dropdown.open .dropdown-menu { display: block !important; }
+    .nav-dropdown .dropdown-menu li a {
+        padding: 0.4rem 0.5rem !important;
+        font-size: 0.875rem !important;
+        color: var(--text-secondary) !important;
+        border-radius: 4px !important;
+    }
+    .nav-dropdown.open > .nav-link .fa-chevron-down {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease;
+    }
+
     /* --- Footer --- */
     .footer { padding: 3rem 0 1.5rem; }
     .footer-content { grid-template-columns: 1fr; gap: 2rem; }

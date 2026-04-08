@@ -760,6 +760,69 @@ button { font-family: inherit; }
 /* ===============================================
    CERTIFICATIONS & PARTNERS SECTION
    =============================================== */
+/* Logo row on index.html */
+.cert-logos-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    transition: var(--transition-fast);
+    min-width: 110px;
+}
+
+.cert-logo-item:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-logo-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+}
+
+.cert-logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.cert-logo-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.cert-view-all {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+    gap: 0.3rem;
+}
+
+.cert-view-all:hover { text-decoration: underline; }
+
+/* Badge grid on certifications.html */
 .cert-badges-row {
     display: flex;
     flex-wrap: wrap;

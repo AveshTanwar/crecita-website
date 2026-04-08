@@ -1,5 +1,5 @@
 /**
- * CRECITA WEBSITE — app.js
+ * CRECITA WEBSITE - app.js
  * Clean, performance-optimised interactions
  */
 

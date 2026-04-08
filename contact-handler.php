@@ -50,7 +50,7 @@ $envelopeSender = '-f reach@crecita-it.com';
 /* ================================================
    1. NOTIFICATION EMAIL → Crecita team
    ================================================ */
-$notifySubject = "New Enquiry: $fullName — $service";
+$notifySubject = "New Enquiry: $fullName - $service";
 
 $notifyHtml = '<!DOCTYPE html>
 <html><head><meta charset="UTF-8"><style>
@@ -102,7 +102,7 @@ if (!$sent) {
 /* ================================================
    2. AUTO-REPLY EMAIL → Customer
    ================================================ */
-$replySubject = "We received your message — Crecita";
+$replySubject = "We received your message - Crecita";
 
 $replyHtml = '<!DOCTYPE html>
 <html><head><meta charset="UTF-8"><style>
@@ -141,7 +141,7 @@ $replyHtml = '<!DOCTYPE html>
       <a href="https://crecita-it.com/services.html">Explore Our Services</a>
     </div>
     <hr class="divider">
-    <p style="font-size:14px; color:#94a3b8; margin:0;">If you have anything to add or a question before we respond, just reply to this email — it goes straight to our team.</p>
+    <p style="font-size:14px; color:#94a3b8; margin:0;">If you have anything to add or a question before we respond, just reply to this email - it goes straight to our team.</p>
   </div>
   <div class="footer">
     <strong style="color:#0f172a;">Crecita</strong><br>

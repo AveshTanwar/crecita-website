@@ -1,5 +1,5 @@
 /* ===============================================
-   CRECITA WEBSITE — DESIGN SYSTEM v2
+   CRECITA WEBSITE - DESIGN SYSTEM v2
    Premium · Clean · Polished
    =============================================== */
 
@@ -202,7 +202,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — BUTTON
+   COMPONENTS - BUTTON
    =============================================== */
 .btn {
     display: inline-flex;
@@ -267,7 +267,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — CARD
+   COMPONENTS - CARD
    =============================================== */
 .card {
     background: var(--bg-primary);
@@ -298,7 +298,7 @@ button { font-family: inherit; }
     line-height: 1.6;
 }
 
-/* Service Card — colored top border, visible shadow */
+/* Service Card - colored top border, visible shadow */
 .service-card {
     background: var(--bg-primary);
     border-radius: var(--radius-xl);
@@ -320,7 +320,7 @@ button { font-family: inherit; }
     transform: translateY(-5px);
 }
 
-/* Service Section Card — for services.html full-section wrappers */
+/* Service Section Card - for services.html full-section wrappers */
 .svc-card-wrap {
     background: var(--bg-primary);
     border-radius: var(--radius-2xl);
@@ -331,7 +331,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — ICON WRAPPER
+   COMPONENTS - ICON WRAPPER
    =============================================== */
 .icon-wrap {
     width: 52px;
@@ -363,7 +363,7 @@ button { font-family: inherit; }
 .icon-green   { background: rgba(34, 197, 94, 0.1);   color: #22c55e; }
 
 /* ===============================================
-   COMPONENTS — BADGE & TAG
+   COMPONENTS - BADGE & TAG
    =============================================== */
 .badge {
     display: inline-flex;
@@ -418,7 +418,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — FEATURE LIST
+   COMPONENTS - FEATURE LIST
    =============================================== */
 .feature-list {
     list-style: none;
@@ -444,7 +444,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — FORM
+   COMPONENTS - FORM
    =============================================== */
 .form-group {
     display: flex;
@@ -501,7 +501,7 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
-   COMPONENTS — INFO BOX
+   COMPONENTS - INFO BOX
    =============================================== */
 .info-box {
     padding: var(--space-md) var(--space-lg);
@@ -638,7 +638,7 @@ button { font-family: inherit; }
     position: relative;
 }
 
-/* Hover bridge — keeps menu open while mouse moves down to it */
+/* Hover bridge - keeps menu open while mouse moves down to it */
 .nav-dropdown::after {
     content: '';
     position: absolute;
@@ -1077,7 +1077,7 @@ html, body {
 * { box-sizing: border-box; }
 
 /* ===============================================
-   RESPONSIVE — LARGE TABLET  (≤1200px)
+   RESPONSIVE - LARGE TABLET  (≤1200px)
    =============================================== */
 @media (max-width: 1200px) {
     /* Service cards index: 4 col → 2 col */
@@ -1090,7 +1090,7 @@ html, body {
 }
 
 /* ===============================================
-   RESPONSIVE — TABLET  (≤1024px)
+   RESPONSIVE - TABLET  (≤1024px)
    =============================================== */
 @media (max-width: 1024px) {
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1117,7 +1117,7 @@ html, body {
 }
 
 /* ===============================================
-   RESPONSIVE — MOBILE  (≤768px)
+   RESPONSIVE - MOBILE  (≤768px)
    =============================================== */
 @media (max-width: 768px) {
 
@@ -1223,7 +1223,7 @@ html, body {
         padding: 4px 0 4px 12px;
         margin: 4px 0 4px 8px;
         min-width: 0;
-        /* display:none already set by desktop rule — no override needed */
+        /* display:none already set by desktop rule - no override needed */
     }
     .nav-dropdown:hover .dropdown-menu { display: none; }
     .nav-dropdown.open .dropdown-menu { display: block; }
@@ -1256,7 +1256,7 @@ html, body {
 }
 
 /* ===============================================
-   RESPONSIVE — SMALL MOBILE  (≤480px)
+   RESPONSIVE - SMALL MOBILE  (≤480px)
    =============================================== */
 @media (max-width: 480px) {
     .hero { padding: calc(3rem + 65px) 0 2.5rem; }

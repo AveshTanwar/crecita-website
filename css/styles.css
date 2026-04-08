@@ -632,6 +632,175 @@ button { font-family: inherit; }
 }
 
 /* ===============================================
+   NAV DROPDOWN
+   =============================================== */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0.5rem;
+    min-width: 220px;
+    z-index: 1100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown .dropdown-menu li a {
+    display: block;
+    padding: 0.45rem 0.875rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+    white-space: nowrap;
+}
+
+.nav-dropdown .dropdown-menu li a:hover {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+[data-theme="dark"] .nav-dropdown .dropdown-menu {
+    background: var(--bg-secondary);
+}
+
+/* ===============================================
+   COOKIE BANNER
+   =============================================== */
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 0.875rem 1.25rem;
+    align-items: center;
+    gap: 1.25rem;
+    z-index: 1200;
+    max-width: 680px;
+    width: calc(100% - 2rem);
+    flex-wrap: wrap;
+}
+
+.cookie-text {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-text i {
+    color: var(--accent);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.cookie-text p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cookie-text p a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.cookie-text p a:hover {
+    text-decoration: underline;
+}
+
+.cookie-btns {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .cookie-banner {
+    background: var(--bg-secondary);
+}
+
+/* ===============================================
+   CERTIFICATIONS & PARTNERS SECTION
+   =============================================== */
+.cert-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.cert-badges-row > div {
+    flex: 0 0 auto;
+    min-height: 270px;
+}
+
+.partners-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+}
+
+.partner-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.partner-item i {
+    font-size: 1.75rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .cert-badges-row { gap: 1.25rem; }
+    .partners-strip  { flex-direction: column; align-items: center; text-align: center; gap: 1.25rem; padding: 1.5rem; }
+    .partner-item    { white-space: normal; text-align: center; }
+}
+
+/* ===============================================
    PAGE HEADER
    =============================================== */
 .page-header {

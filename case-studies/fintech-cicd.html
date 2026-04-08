@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech CI/CD Transformation — 12x Daily Releases | Crecita</title>
+    <meta name="description" content="See how Crecita rebuilt a payments platform's CI/CD pipeline — 8-min releases, 91% test coverage, <60s rollback. Book a free consultation.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How a FinTech Platform Went from Weekly Deploys to 12x Daily Releases">
+    <meta property="og:description" content="See how Crecita rebuilt a payments platform's CI/CD pipeline — 8-min releases, 91% test coverage, <60s rollback. Book a free consultation.">
+    <meta property="og:url" content="https://crecita.com/case-studies/fintech-cicd.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* ── Reset & base ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #0d1530 55%, #111827 100%);
+            padding: 4.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; left: 50%;
+            transform: translateX(-50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(59,130,246,0.18);
+            color: #93c5fd;
+            border: 1px solid rgba(59,130,246,0.35);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.75rem, 4vw, 2.85rem);
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 strong {
+            color: #3b82f6;
+            font-weight: 800;
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 620px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #3b82f6;
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(59,130,246,0.5);
+        }
+        .link-back {
+            color: #64748b;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s;
+        }
+        .link-back:hover { color: #94a3b8; }
+
+        /* ── Metrics ── */
+        .metrics-section {
+            background: #f8fafc;
+            padding: 3.5rem 1.5rem;
+        }
+        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+        .metric-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.75rem 1.25rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            border-top: 4px solid #3b82f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .metric-card:nth-child(2) { border-top-color: #10b981; }
+        .metric-card:nth-child(3) { border-top-color: #f59e0b; }
+        .metric-card:nth-child(4) { border-top-color: #8b5cf6; }
+        .metric-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.11); }
+        .metric-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+            font-weight: 800;
+            color: #0a0f1e;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .metric-label {
+            font-size: 0.82rem;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Content sections ── */
+        .content-section {
+            padding: 4rem 1.5rem;
+        }
+        .content-section.alt { background: #f8fafc; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #3b82f6;
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 700;
+            color: #0a0f1e;
+            margin-bottom: 1.25rem;
+        }
+        .content-text {
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 720px;
+            line-height: 1.75;
+        }
+
+        /* ── Two-col layout ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* ── Solution list ── */
+        .solution-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .solution-list li i {
+            color: #10b981;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+
+        /* ── Impact list ── */
+        .impact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-left: 3px solid #10b981;
+        }
+        .impact-item i {
+            color: #10b981;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        .impact-item span { font-size: 0.98rem; color: #334155; }
+
+        /* ── Tech stack ── */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+        .tech-tag {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        /* ── Trust signals ── */
+        .trust-section {
+            background: #0a0f1e;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        .trust-section .section-title { color: #f8fafc; }
+        .trust-section .section-label { color: #60a5fa; }
+
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .partner-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .partner-chip {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .partner-chip i { color: #f59e0b; }
+
+        .stats-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        .stats-chip {
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 50px;
+            padding: 0.45rem 1.15rem;
+            font-size: 0.85rem;
+            color: #93c5fd;
+            font-weight: 600;
+        }
+
+        /* ── Final CTA section ── */
+        .cta-section {
+            padding: 5rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+        }
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .cta-section p {
+            color: #bfdbfe;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-cta-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #1d4ed8;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-decoration: none;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .btn-cta-lg:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+
+        /* ── Sticky mobile CTA ── */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #3b82f6;
+            padding: 1rem;
+            text-align: center;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+        .btn-sticky {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .two-col { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .sticky-cta { display: block; }
+            body { padding-bottom: 60px; }
+            .hero { padding: 3.5rem 1.25rem 3rem; }
+        }
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="badge">DevOps · FinTech · Case Study</div>
+        <h1>How a FinTech Payments Platform Went from Weekly Deploys to <strong>12x Daily Releases</strong></h1>
+        <p class="hero-sub">A growing payments startup was shipping once a week. Every deploy was a war room. We changed that — completely.</p>
+        <div class="hero-actions">
+            <a href="../contact.html" class="btn-primary">
+                <i class="fas fa-calendar-check"></i> Book a Free Consultation
+            </a>
+            <a href="../case-studies.html" class="link-back">
+                <i class="fas fa-arrow-left"></i> Back to All Case Studies
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     KEY METRICS
+══════════════════════════════════════ -->
+<section class="metrics-section">
+    <div class="section-inner">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">12x</div>
+                <div class="metric-label">Daily Deployments</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">91%</div>
+                <div class="metric-label">Test Coverage</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">8 min</div>
+                <div class="metric-label">Release Cycle</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">&lt;60s</div>
+                <div class="metric-label">Rollback Time</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CHALLENGE
+══════════════════════════════════════ -->
+<section class="content-section">
+    <div class="section-inner two-col">
+        <div>
+            <span class="section-label">The Problem</span>
+            <h2 class="section-title">Weekly Deploys. War Rooms. Fear.</h2>
+            <p class="content-text">
+                The payments platform was shipping once a week — every deployment required a war room, manual testing, and dedicated weekend work. Developer morale was low, releases were feared, and business agility was impossible.
+            </p>
+            <p class="content-text" style="margin-top:1rem;">
+                Test coverage sat at 34%. Any failure meant hours of rollback. The team was trapped in a cycle of reactive firefighting rather than building the product.
+            </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:1rem; padding-top:2.5rem;">
+            <div style="background:#fef2f2; border-left:4px solid #ef4444; border-radius:8px; padding:1.25rem 1.5rem;">
+                <div style="font-weight:700; color:#dc2626; margin-bottom:0.35rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em;">Before Crecita</div>
+                <ul style="list-style:none; display:flex; flex-direction:column; gap:0.6rem;">
+                    <li style="display:flex; align-items:center; gap:0.6rem; color:#7f1d1d; font-size:0.95rem;"><i class="fas fa-times-circle" style="color:#ef4444;"></i> 1 deploy per week, manually</li>
+                    <li style="display:flex; align-items:center; gap:0.6rem; color:#7f1d1d; font-size:0.95rem;"><i class="fas fa-times-circle" style="color:#ef4444;"></i> 34% test coverage</li>
+                    <li style="display:flex; align-items:center; gap:0.6rem; color:#7f1d1d; font-size:0.95rem;"><i class="fas fa-times-circle" style="color:#ef4444;"></i> Hours to rollback on failure</li>
+                    <li style="display:flex; align-items:center; gap:0.6rem; color:#7f1d1d; font-size:0.95rem;"><i class="fas fa-times-circle" style="color:#ef4444;"></i> Weekend war rooms required</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SOLUTION
+══════════════════════════════════════ -->
+<section class="content-section alt">
+    <div class="section-inner">
+        <span class="section-label">What We Built</span>
+        <h2 class="section-title">A Complete CI/CD Rebuild — From the Ground Up</h2>
+        <div class="two-col" style="margin-top:1.5rem;">
+            <div>
+                <p class="content-text">Crecita rebuilt the entire CI/CD pipeline from scratch, replacing fragile manual processes with automated, declarative, production-grade delivery infrastructure.</p>
+                <ul class="solution-list" style="margin-top:1.5rem;">
+                    <li><i class="fas fa-check-circle"></i> GitHub Actions pipelines with automated test gates</li>
+                    <li><i class="fas fa-check-circle"></i> Containerised microservices with Docker and Kubernetes (EKS)</li>
+                    <li><i class="fas fa-check-circle"></i> GitOps workflow using ArgoCD for declarative deployments</li>
+                    <li><i class="fas fa-check-circle"></i> Helm charts for consistent, version-controlled releases</li>
+                    <li><i class="fas fa-check-circle"></i> Terraform for reproducible infrastructure provisioning</li>
+                    <li><i class="fas fa-check-circle"></i> Automated test coverage: 34% → 91%</li>
+                </ul>
+            </div>
+            <div>
+                <div style="background:#0a0f1e; border-radius:12px; padding:1.75rem; color:#e2e8f0; font-family:'Inter',monospace; font-size:0.88rem; line-height:1.8;">
+                    <div style="color:#64748b; margin-bottom:0.75rem; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;">Pipeline Flow</div>
+                    <div><span style="color:#60a5fa;">git push</span> → GitHub Actions</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Unit + integration tests</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Security scan (Trivy)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Docker build + push</div>
+                    <div><span style="color:#34d399;">ArgoCD</span> sync (GitOps)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Helm chart apply (EKS)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Smoke tests</div>
+                    <div><span style="color:#f59e0b;">Total: 8 minutes</span> end-to-end</div>
+                </div>
+            </div>
+        </div>
+        <div class="tech-tags">
+            <span class="tech-tag"><i class="fab fa-github" style="margin-right:0.3rem;"></i>GitHub Actions</span>
+            <span class="tech-tag"><i class="fab fa-docker" style="margin-right:0.3rem;"></i>Docker</span>
+            <span class="tech-tag">Kubernetes (EKS)</span>
+            <span class="tech-tag">ArgoCD</span>
+            <span class="tech-tag">Helm</span>
+            <span class="tech-tag">Terraform</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RESULTS
+══════════════════════════════════════ -->
+<section class="content-section">
+    <div class="section-inner">
+        <span class="section-label">The Results</span>
+        <h2 class="section-title">Shipping Became a Non-Event</h2>
+        <p class="content-text" style="margin-bottom:2rem;">What was once the most stressful day of the week became a background process. The team now focuses on building — not deploying.</p>
+        <ul class="impact-list">
+            <li class="impact-item">
+                <i class="fas fa-rocket"></i>
+                <span>Team now ships to production <strong>12 times per day</strong> — zero manual intervention required</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-undo-alt"></i>
+                <span>Rollback takes <strong>under 60 seconds</strong> — any incident is contained before it becomes a crisis</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Test coverage rose from <strong>34% to 91%</strong> — catching bugs before they ever reach production</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-smile-beam"></i>
+                <span>Developer confidence and morale <strong>transformed</strong> — engineers are now proud to ship</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-bolt"></i>
+                <span>Business can <strong>respond to market changes same-day</strong> — agility is now a competitive advantage</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUST SIGNALS
+══════════════════════════════════════ -->
+<section class="trust-section">
+    <div class="section-inner">
+        <span class="section-label">Credentials & Partnerships</span>
+        <h2 class="section-title">Built by Certified Experts</h2>
+        <p style="color:#94a3b8; margin-bottom:2rem; font-size:1rem;">Our team holds industry-recognised certifications and partnerships that back every engagement.</p>
+
+        <div class="badges-row">
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="22e8b17e-f759-46a9-a41c-77a123aeaad2" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="16f19ee8-725c-4b36-9df9-a9cfceda6adf" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+
+        <div class="partner-chips">
+            <span class="partner-chip"><i class="fab fa-microsoft"></i> Microsoft AI Cloud Partner Program | Partner ID: 7099667</span>
+            <span class="partner-chip"><i class="fab fa-aws"></i> AWS Partner Network Member</span>
+        </div>
+        <div class="stats-chips">
+            <span class="stats-chip"><i class="fas fa-check" style="margin-right:0.4rem;"></i>100+ Projects Delivered</span>
+            <span class="stats-chip"><i class="fas fa-industry" style="margin-right:0.4rem;"></i>15+ Industries Served</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════ -->
+<section class="cta-section">
+    <h2>Ready to Transform Your Delivery Pipeline?</h2>
+    <p>Let's talk about what's holding your team back — and how we can fix it.</p>
+    <a href="../contact.html" class="btn-cta-lg">
+        <i class="fas fa-calendar-check"></i> Book a Free Consultation
+    </a>
+</section>
+
+<!-- ══════════════════════════════════════
+     STICKY MOBILE CTA
+══════════════════════════════════════ -->
+<div class="sticky-cta">
+    <a href="../contact.html" class="btn-sticky">Book a Free Consultation →</a>
+</div>
+
+<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+</body>
+</html>

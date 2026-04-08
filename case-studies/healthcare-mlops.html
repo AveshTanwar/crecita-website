@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare MLOps Platform — 6 Weeks to 3 Days | Crecita</title>
+    <meta name="description" content="MLOps platform delivering 40% accuracy gains, 100% experiment reproducibility, and real-time drift monitoring. Book a free consultation.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How a Healthcare Analytics Team Cut Model Deployment from 6 Weeks to 3 Days">
+    <meta property="og:description" content="MLOps platform delivering 40% accuracy gains, 100% experiment reproducibility, and real-time drift monitoring. Book a free consultation.">
+    <meta property="og:url" content="https://crecita.com/case-studies/healthcare-mlops.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* ── Reset & base ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #0f1a2e 55%, #111827 100%);
+            padding: 4.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; left: 50%;
+            transform: translateX(-50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(245,158,11,0.14) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(245,158,11,0.15);
+            color: #fcd34d;
+            border: 1px solid rgba(245,158,11,0.35);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.75rem, 4vw, 2.85rem);
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 strong {
+            color: #f59e0b;
+            font-weight: 800;
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f59e0b;
+            color: #0a0f1e;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+        }
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(245,158,11,0.5);
+        }
+        .link-back {
+            color: #64748b;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s;
+        }
+        .link-back:hover { color: #94a3b8; }
+
+        /* ── Metrics ── */
+        .metrics-section {
+            background: #f8fafc;
+            padding: 3.5rem 1.5rem;
+        }
+        .section-inner { max-width: 1000px; margin: 0 auto; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+        .metric-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.75rem 1.25rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            border-top: 4px solid #f59e0b;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .metric-card:nth-child(2) { border-top-color: #10b981; }
+        .metric-card:nth-child(3) { border-top-color: #3b82f6; }
+        .metric-card:nth-child(4) { border-top-color: #8b5cf6; }
+        .metric-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.11); }
+        .metric-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+            font-weight: 800;
+            color: #0a0f1e;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .metric-label {
+            font-size: 0.82rem;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Content sections ── */
+        .content-section {
+            padding: 4rem 1.5rem;
+        }
+        .content-section.alt { background: #f8fafc; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 700;
+            color: #0a0f1e;
+            margin-bottom: 1.25rem;
+        }
+        .content-text {
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 720px;
+            line-height: 1.75;
+        }
+
+        /* ── Two-col ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* ── Solution list ── */
+        .solution-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .solution-list li i {
+            color: #f59e0b;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+
+        /* ── Impact list ── */
+        .impact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #fff;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-left: 3px solid #f59e0b;
+        }
+        .impact-item i {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        .impact-item span { font-size: 0.98rem; color: #334155; }
+
+        /* ── Before/after comparison ── */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .compare-card {
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+        }
+        .compare-card.before {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+        .compare-card.after {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+        }
+        .compare-label {
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+        .compare-card.before .compare-label { color: #dc2626; }
+        .compare-card.after .compare-label { color: #059669; }
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+        .compare-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+        }
+        .compare-card.before .compare-list li { color: #7f1d1d; }
+        .compare-card.after .compare-list li { color: #14532d; }
+        .compare-card.before .compare-list li i { color: #ef4444; }
+        .compare-card.after .compare-list li i { color: #10b981; }
+
+        /* ── Pipeline visual ── */
+        .pipeline-visual {
+            background: #0a0f1e;
+            border-radius: 12px;
+            padding: 1.75rem;
+            color: #e2e8f0;
+            font-family: 'Inter', monospace;
+            font-size: 0.88rem;
+            line-height: 1.9;
+        }
+
+        /* ── Tech tags ── */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+        .tech-tag {
+            background: #fffbeb;
+            color: #92400e;
+            border: 1px solid #fde68a;
+            border-radius: 6px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        /* ── Trust signals ── */
+        .trust-section {
+            background: #0a0f1e;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        .trust-section .section-title { color: #f8fafc; }
+        .trust-section .section-label { color: #fcd34d; }
+
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .partner-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .partner-chip {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .partner-chip i { color: #f59e0b; }
+
+        .stats-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        .stats-chip {
+            background: rgba(245,158,11,0.15);
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 50px;
+            padding: 0.45rem 1.15rem;
+            font-size: 0.85rem;
+            color: #fcd34d;
+            font-weight: 600;
+        }
+
+        /* ── Final CTA ── */
+        .cta-section {
+            padding: 5rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #451a03 0%, #92400e 100%);
+        }
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .cta-section p {
+            color: #fde68a;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-cta-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #92400e;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-decoration: none;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .btn-cta-lg:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+
+        /* ── Sticky mobile CTA ── */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #f59e0b;
+            padding: 1rem;
+            text-align: center;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+        .btn-sticky {
+            color: #0a0f1e;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .two-col { grid-template-columns: 1fr; gap: 2rem; }
+            .comparison { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .sticky-cta { display: block; }
+            body { padding-bottom: 60px; }
+            .hero { padding: 3.5rem 1.25rem 3rem; }
+        }
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="badge">MLOps · Healthcare · Case Study</div>
+        <h1>How a Healthcare Analytics Team Cut Model Deployment from <strong>6 Weeks to 3 Days</strong></h1>
+        <p class="hero-sub">A talented data science team was producing great models — but production was a black box. We gave them the platform to ship with confidence.</p>
+        <div class="hero-actions">
+            <a href="../contact.html" class="btn-primary">
+                <i class="fas fa-calendar-check"></i> Book a Free Consultation
+            </a>
+            <a href="../case-studies.html" class="link-back">
+                <i class="fas fa-arrow-left"></i> Back to All Case Studies
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     KEY METRICS
+══════════════════════════════════════ -->
+<section class="metrics-section">
+    <div class="section-inner">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">3 Days</div>
+                <div class="metric-label">Model-to-Prod (was 6 wks)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">+40%</div>
+                <div class="metric-label">Accuracy Gain</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Experiment Reproducibility</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">Live</div>
+                <div class="metric-label">Real-time Drift Monitoring</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CHALLENGE
+══════════════════════════════════════ -->
+<section class="content-section">
+    <div class="section-inner two-col">
+        <div>
+            <span class="section-label">The Problem</span>
+            <h2 class="section-title">Great Models. No Way to Ship Them.</h2>
+            <p class="content-text">
+                The data science team was talented and building impressive models — but getting them into production was a different story entirely. Manual handoffs between data science and engineering meant weeks of delays, undocumented experiments, and no monitoring once a model was deployed.
+            </p>
+            <p class="content-text" style="margin-top:1rem;">
+                Models were silently degrading in production. There was no audit trail of model versions, creating serious compliance risk. Data scientists couldn't iterate quickly because every experiment was an isolated, unrepeatable effort.
+            </p>
+        </div>
+        <div>
+            <div class="comparison">
+                <div class="compare-card before">
+                    <div class="compare-label">Before Crecita</div>
+                    <ul class="compare-list">
+                        <li><i class="fas fa-times-circle"></i> 6-week deployment cycle</li>
+                        <li><i class="fas fa-times-circle"></i> Manual, undocumented handoffs</li>
+                        <li><i class="fas fa-times-circle"></i> No model monitoring</li>
+                        <li><i class="fas fa-times-circle"></i> Silent model degradation</li>
+                        <li><i class="fas fa-times-circle"></i> Compliance risk</li>
+                    </ul>
+                </div>
+                <div class="compare-card after">
+                    <div class="compare-label">After Crecita</div>
+                    <ul class="compare-list">
+                        <li><i class="fas fa-check-circle"></i> 3-day deployment cycle</li>
+                        <li><i class="fas fa-check-circle"></i> Fully automated pipelines</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time drift detection</li>
+                        <li><i class="fas fa-check-circle"></i> Zero silent failures</li>
+                        <li><i class="fas fa-check-circle"></i> Full audit trail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SOLUTION
+══════════════════════════════════════ -->
+<section class="content-section alt">
+    <div class="section-inner">
+        <span class="section-label">What We Built</span>
+        <h2 class="section-title">A Production-Grade MLOps Platform — End to End</h2>
+        <div class="two-col" style="margin-top:1.5rem;">
+            <div>
+                <p class="content-text">Crecita designed and deployed a full MLOps platform that gave the data science team ownership of the entire model lifecycle — from experiment to production monitoring — with no engineering bottlenecks.</p>
+                <ul class="solution-list" style="margin-top:1.5rem;">
+                    <li><i class="fas fa-check-circle"></i> MLflow for experiment tracking and model registry</li>
+                    <li><i class="fas fa-check-circle"></i> Kubeflow Pipelines for automated training workflows</li>
+                    <li><i class="fas fa-check-circle"></i> Centralised Feature Store for consistent feature serving</li>
+                    <li><i class="fas fa-check-circle"></i> SageMaker for scalable training and deployment</li>
+                    <li><i class="fas fa-check-circle"></i> Evidently AI for real-time data drift detection</li>
+                    <li><i class="fas fa-check-circle"></i> Automated retraining triggers on drift detection</li>
+                    <li><i class="fas fa-check-circle"></i> Airflow for orchestrating the full data pipeline</li>
+                </ul>
+            </div>
+            <div>
+                <div class="pipeline-visual">
+                    <div style="color:#64748b; margin-bottom:0.75rem; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;">MLOps Lifecycle</div>
+                    <div><span style="color:#fbbf24;">Data Pipeline</span> (Airflow)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Feature Store ingestion</div>
+                    <div><span style="color:#60a5fa;">Experiment</span> (MLflow + Kubeflow)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Tracked, versioned, reproducible</div>
+                    <div><span style="color:#34d399;">Training</span> (SageMaker)</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Auto-registered to Model Registry</div>
+                    <div><span style="color:#a78bfa;">Production</span></div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Evidently AI drift monitoring</div>
+                    <div style="margin-left:1rem; color:#94a3b8;">↳ Auto-retrain on drift alert</div>
+                    <div style="margin-top:0.5rem;"><span style="color:#f59e0b;">Total cycle: 3 days</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="tech-tags">
+            <span class="tech-tag">MLflow</span>
+            <span class="tech-tag">Kubeflow</span>
+            <span class="tech-tag">SageMaker</span>
+            <span class="tech-tag">Airflow</span>
+            <span class="tech-tag">Evidently AI</span>
+            <span class="tech-tag">Feature Store</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RESULTS
+══════════════════════════════════════ -->
+<section class="content-section">
+    <div class="section-inner">
+        <span class="section-label">The Results</span>
+        <h2 class="section-title">Data Science Became a True Business Advantage</h2>
+        <p class="content-text" style="margin-bottom:2rem;">What was once a slow, fragile, compliance-risky process became a repeatable, monitored, self-healing system. The team now moves at the speed the business demands.</p>
+        <ul class="impact-list">
+            <li class="impact-item">
+                <i class="fas fa-rocket"></i>
+                <span>Model deployment cut from <strong>6 weeks to 3 days</strong> — 14x faster time-to-value for every model</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-brain"></i>
+                <span>Prediction accuracy improved <strong>40%</strong> through systematic, tracked experimentation at scale</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-shield-alt"></i>
+                <span><strong>Zero silent model failures</strong> since go-live — drift detection catches issues before patients or clinicians are affected</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-clipboard-check"></i>
+                <span><strong>Full audit trail</strong> for every experiment and model version — compliance risk eliminated</span>
+            </li>
+            <li class="impact-item">
+                <i class="fas fa-flask"></i>
+                <span>Data science team can now run <strong>10x more experiments per sprint</strong> — every hypothesis tested, nothing blocked</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUST SIGNALS
+══════════════════════════════════════ -->
+<section class="trust-section">
+    <div class="section-inner">
+        <span class="section-label">Credentials & Partnerships</span>
+        <h2 class="section-title">Built by Certified Experts</h2>
+        <p style="color:#94a3b8; margin-bottom:2rem; font-size:1rem;">Our team holds industry-recognised certifications and partnerships that back every engagement.</p>
+
+        <div class="badges-row">
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="22e8b17e-f759-46a9-a41c-77a123aeaad2" data-share-badge-host="https://www.credly.com"></div>
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="16f19ee8-725c-4b36-9df9-a9cfceda6adf" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+
+        <div class="partner-chips">
+            <span class="partner-chip"><i class="fab fa-microsoft"></i> Microsoft AI Cloud Partner Program | Partner ID: 7099667</span>
+            <span class="partner-chip"><i class="fab fa-aws"></i> AWS Partner Network Member</span>
+        </div>
+        <div class="stats-chips">
+            <span class="stats-chip"><i class="fas fa-check" style="margin-right:0.4rem;"></i>100+ Projects Delivered</span>
+            <span class="stats-chip"><i class="fas fa-industry" style="margin-right:0.4rem;"></i>15+ Industries Served</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════ -->
+<section class="cta-section">
+    <h2>Ready to Operationalise Your Machine Learning?</h2>
+    <p>Let's talk about what's slowing your models down — and build the platform to fix it.</p>
+    <a href="../contact.html" class="btn-cta-lg">
+        <i class="fas fa-calendar-check"></i> Book a Free Consultation
+    </a>
+</section>
+
+<!-- ══════════════════════════════════════
+     STICKY MOBILE CTA
+══════════════════════════════════════ -->
+<div class="sticky-cta">
+    <a href="../contact.html" class="btn-sticky">Book a Free Consultation →</a>
+</div>
+
+<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+</body>
+</html>

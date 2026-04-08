@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="52% token cost reduction, 68% latency improvement, 94% RAG accuracy, full hallucination tracking. See how Crecita transformed a Legal Tech firm's LLM stack.">
+    <meta property="og:title" content="How a Legal Tech Firm Cut LLM Costs by 52% While Improving Answer Accuracy to 94%">
+    <meta property="og:description" content="52% token cost reduction, 68% latency improvement, 94% RAG accuracy, full hallucination tracking. Book a free LLMOps consultation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crecita-it.com/case-studies/legaltech-llmops.html">
+    <title>LegalTech LLMOps — 52% Cost Reduction, 94% Accuracy | Crecita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; color: #0f172a; background: #ffffff; line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        .container-sm { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #0f2a1a 50%, #0a1a2e 100%);
+            padding: 5rem 0 4rem;
+            color: white;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3);
+            color: #6ee7b7; padding: 6px 14px; border-radius: 999px;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem; max-width: 820px;
+        }
+        .hero h1 strong { color: #10b981; }
+        .hero p { font-size: 1.125rem; color: #94a3b8; max-width: 640px; margin-bottom: 2rem; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+        .back-link { color: #64748b; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: #94a3b8; }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #10b981; color: white; padding: 0.875rem 1.75rem;
+            border-radius: 8px; font-weight: 700; font-size: 1rem;
+            transition: all 0.2s; cursor: pointer; border: none;
+        }
+        .btn-primary:hover { background: #059669; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(16,185,129,0.35); }
+        .btn-primary-blue {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #3b82f6; color: white; padding: 0.875rem 1.75rem;
+            border-radius: 8px; font-weight: 700; font-size: 1rem;
+            transition: all 0.2s; cursor: pointer; border: none;
+        }
+        .btn-primary-blue:hover { background: #2563eb; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(59,130,246,0.35); }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: white; padding: 0.875rem 1.75rem;
+            border-radius: 8px; font-weight: 600; font-size: 1rem;
+            border: 1.5px solid rgba(255,255,255,0.25); transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+        /* Metrics */
+        .metrics { background: #f8fafc; padding: 3.5rem 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .metric-card {
+            background: white; border-radius: 12px; padding: 1.75rem 1.5rem;
+            text-align: center; border-top: 3px solid #10b981;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .metric-value { font-size: 2.25rem; font-weight: 800; color: #10b981; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+        .metric-label { font-size: 0.875rem; color: #64748b; font-weight: 500; }
+
+        /* Sections */
+        .section { padding: 4rem 0; }
+        .section-alt { padding: 4rem 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; color: #10b981; margin-bottom: 0.75rem;
+        }
+        .section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: #0f172a; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+
+        /* Content layout */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .content-text p { color: #475569; font-size: 1rem; line-height: 1.75; margin-bottom: 1rem; }
+        .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 0.75rem; color: #475569; font-size: 0.9375rem; line-height: 1.6; }
+        .feature-list li i { color: #10b981; margin-top: 3px; flex-shrink: 0; font-size: 0.875rem; }
+
+        /* Callout box */
+        .callout {
+            background: rgba(16,185,129,0.06); border-left: 3px solid #10b981;
+            border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem;
+            font-size: 0.9375rem; color: #475569; line-height: 1.7;
+            margin: 1.5rem 0;
+        }
+        .callout strong { color: #0f172a; }
+
+        /* Impact cards */
+        .impact-list { display: flex; flex-direction: column; gap: 1rem; }
+        .impact-item {
+            background: white; border-radius: 10px; padding: 1.25rem 1.5rem;
+            border: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .impact-icon { width: 36px; height: 36px; background: rgba(16,185,129,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .impact-icon i { color: #10b981; font-size: 0.875rem; }
+        .impact-item h4 { font-size: 0.9375rem; font-weight: 600; color: #0f172a; margin-bottom: 3px; }
+        .impact-item p { font-size: 0.875rem; color: #64748b; line-height: 1.5; }
+
+        /* Tech tags */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+        .tech-tag {
+            background: #f1f5f9; color: #475569; padding: 4px 12px;
+            border-radius: 999px; font-size: 0.8125rem; font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Cost callout */
+        .cost-box {
+            background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(59,130,246,0.06) 100%);
+            border: 1px solid rgba(16,185,129,0.2); border-radius: 12px;
+            padding: 2rem; text-align: center; margin-top: 1.5rem;
+        }
+        .cost-box .big-num { font-size: 3rem; font-weight: 800; color: #10b981; letter-spacing: -0.04em; }
+        .cost-box .big-label { font-size: 1rem; color: #475569; font-weight: 500; }
+        .cost-box .cost-detail { font-size: 0.875rem; color: #94a3b8; margin-top: 6px; }
+
+        /* Trust signals */
+        .trust { background: #0a0f1e; color: white; padding: 4rem 0; }
+        .trust .section-label { color: #6ee7b7; }
+        .trust .section-title { color: white; }
+        .cert-badges-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 1.5rem; margin: 2rem 0; }
+        .cert-badges-row > div { flex: 0 0 auto; }
+        .partners-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1.5rem; }
+        .partner-badge {
+            display: flex; align-items: center; gap: 0.75rem;
+            background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+            padding: 0.875rem 1.5rem; border-radius: 10px;
+            font-size: 0.9rem; color: #cbd5e1; font-weight: 500;
+        }
+        .partner-badge i { font-size: 1.5rem; color: #10b981; }
+        .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1.5rem; }
+        .stat-badge { text-align: center; }
+        .stat-badge .num { font-size: 1.75rem; font-weight: 800; color: #10b981; }
+        .stat-badge .lbl { font-size: 0.8125rem; color: #64748b; margin-top: 2px; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 5rem 0; text-align: center; }
+        .final-cta h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .final-cta p { color: #94a3b8; font-size: 1.0625rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+        /* Sticky CTA (mobile) */
+        .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #10b981; padding: 1rem; text-align: center; z-index: 999; box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+        .btn-sticky { color: white; text-decoration: none; font-weight: 700; font-size: 1rem; }
+
+        @media (max-width: 900px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero { padding: 3.5rem 0 3rem; }
+            .hero h1 { font-size: 1.875rem; }
+            .sticky-cta { display: block; }
+            body { padding-bottom: 60px; }
+        }
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+            .metric-value { font-size: 1.75rem; }
+            .container, .container-sm { padding: 0 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><i class="fas fa-comments"></i> LLMOps &nbsp;·&nbsp; Legal Tech &nbsp;·&nbsp; Case Study</div>
+            <h1>How a Legal Tech Firm Cut LLM Costs by <strong>52%</strong> While Improving Answer Accuracy to <strong>94%</strong></h1>
+            <p>Spiralling GPT-4 costs, unacceptable latency, and zero visibility into hallucinations. We rebuilt their LLM stack — and the numbers transformed.</p>
+            <div class="hero-actions">
+                <a href="../contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+                <a href="../case-studies.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY METRICS ===== -->
+    <section class="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">52%</div>
+                    <div class="metric-label">Token Cost Reduction</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">68%</div>
+                    <div class="metric-label">Latency Reduction</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">94%</div>
+                    <div class="metric-label">Answer Accuracy (RAG)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Hallucination Tracked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE PROBLEM ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <span class="section-label"><i class="fas fa-triangle-exclamation"></i> The Problem</span>
+                    <h2 class="section-title">Costs Spiralling. Latency Killing UX. Zero Visibility.</h2>
+                    <p>A legal technology firm had built an internal document Q&A tool on GPT-4. It worked — but not sustainably. Monthly token costs had climbed past $40,000 with no ceiling in sight.</p>
+                    <p>Response latency was 8–12 seconds per query. Legal professionals were abandoning the tool mid-session. The engineering team had no visibility into hallucination rates, answer quality, or which queries were draining the budget.</p>
+                    <p>Worse — the legal team was losing confidence. A few high-profile hallucinated answers had landed in client documents. The tool was becoming a liability, not an asset.</p>
+                    <div class="callout">
+                        <strong>The core problem wasn't the LLM itself</strong> — it was the absence of an operational layer. No observability, no cost controls, no retrieval optimisation, and no feedback loop for improving accuracy.
+                    </div>
+                </div>
+                <div>
+                    <div class="cost-box">
+                        <div class="big-num">$40K+</div>
+                        <div class="big-label">Monthly LLM Costs Before</div>
+                        <div class="cost-detail">With no ceiling and no visibility into what was driving spend</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem; border: 1px solid #e2e8f0; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">8–12s</div>
+                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Query Latency</div>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem; border: 1px solid #e2e8f0; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">0%</div>
+                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Hallucination Visibility</div>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem; border: 1px solid #e2e8f0; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">GPT-4</div>
+                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Every Single Query</div>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem; border: 1px solid #e2e8f0; text-align: center;">
+                            <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">Falling</div>
+                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Team Confidence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT WE BUILT ===== -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="content-grid">
+                <div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-left: 3px solid #10b981;">
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 4px;"><i class="fas fa-layer-group" style="color: #10b981; margin-right: 8px;"></i>Optimised RAG Pipeline</h4>
+                            <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6;">Redesigned chunking strategy and semantic re-ranking replaced naive similarity search. Precision retrieval meant GPT-4 got better context and answered more accurately.</p>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-left: 3px solid #3b82f6;">
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 4px;"><i class="fas fa-microchip" style="color: #3b82f6; margin-right: 8px;"></i>Fine-tuned Smaller Model</h4>
+                            <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6;">Routine queries (80% of volume) now routed to a QLoRA fine-tuned model. GPT-4 / Azure OpenAI reserved for complex multi-document reasoning only.</p>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-left: 3px solid #8b5cf6;">
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 4px;"><i class="fas fa-eye" style="color: #8b5cf6; margin-right: 8px;"></i>Full LLM Observability</h4>
+                            <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6;">LangSmith deployed for end-to-end tracing: every query, cost, latency, and answer quality score. Hallucination detection on every response.</p>
+                        </div>
+                        <div style="background: white; border-radius: 10px; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-left: 3px solid #f59e0b;">
+                            <h4 style="font-weight: 600; color: #0f172a; margin-bottom: 4px;"><i class="fas fa-bolt" style="color: #f59e0b; margin-right: 8px;"></i>vLLM Self-Hosted Inference</h4>
+                            <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6;">Cost-sensitive query types now served via vLLM on dedicated instances. Response caching via LangChain reduced repeated query costs by a further 30%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-text">
+                    <span class="section-label"><i class="fas fa-wrench"></i> What We Built</span>
+                    <h2 class="section-title">A Full LLMOps Stack — Not Just a Prompt Tweak</h2>
+                    <p>The problem wasn't the model. It was the absence of an intelligent operational layer around it. We built one from the ground up.</p>
+                    <ul class="feature-list" style="margin-top: 1rem;">
+                        <li><i class="fas fa-check-circle"></i> Redesigned RAG pipeline with optimised chunking and semantic re-ranking</li>
+                        <li><i class="fas fa-check-circle"></i> Fine-tuned smaller model (QLoRA) for 80% of routine query volume</li>
+                        <li><i class="fas fa-check-circle"></i> Pinecone vector database with metadata filtering for precise retrieval</li>
+                        <li><i class="fas fa-check-circle"></i> LangSmith for full observability: traces, costs, latency, hallucination tracking</li>
+                        <li><i class="fas fa-check-circle"></i> vLLM self-hosted inference for cost-sensitive query types</li>
+                        <li><i class="fas fa-check-circle"></i> Azure OpenAI reserved for complex multi-document reasoning</li>
+                        <li><i class="fas fa-check-circle"></i> LangChain orchestration with intelligent caching layer</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">vLLM</span>
+                        <span class="tech-tag">LangSmith</span>
+                        <span class="tech-tag">Azure OpenAI</span>
+                        <span class="tech-tag">QLoRA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE RESULTS ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <span class="section-label"><i class="fas fa-chart-line"></i> The Results</span>
+                    <h2 class="section-title">The Numbers Speak for Themselves</h2>
+                    <p>Six months after deployment, the results were unambiguous. The legal team went from questioning the tool's value to making it a daily workflow dependency.</p>
+                    <div class="callout" style="border-left-color: #10b981; background: rgba(16,185,129,0.05);">
+                        <strong>$40K → $19K/month</strong> — token costs cut by 52% with no reduction in capability. The fine-tuned model routes 80% of queries at a fraction of GPT-4 cost while delivering better accuracy for routine legal document Q&A.
+                    </div>
+                </div>
+                <div class="impact-list">
+                    <div class="impact-item">
+                        <div class="impact-icon"><i class="fas fa-coins"></i></div>
+                        <div>
+                            <h4>Token Costs: $40K → $19K/month</h4>
+                            <p>52% reduction through model routing, fine-tuning, and intelligent caching.</p>
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon"><i class="fas fa-bolt"></i></div>
+                        <div>
+                            <h4>Latency: 8–12s → 2.6–4s per query</h4>
+                            <p>68% latency reduction. Legal professionals can now get answers in real time.</p>
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon"><i class="fas fa-bullseye"></i></div>
+                        <div>
+                            <h4>Answer Accuracy: climbed to 94%</h4>
+                            <p>Better retrieval + fine-tuned model = dramatically more accurate RAG answers.</p>
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon"><i class="fas fa-eye"></i></div>
+                        <div>
+                            <h4>100% Hallucination Visibility</h4>
+                            <p>Every LLM interaction now fully traced. Hallucinations flagged automatically.</p>
+                        </div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-icon"><i class="fas fa-users"></i></div>
+                        <div>
+                            <h4>Daily Active Usage: 3x increase</h4>
+                            <p>Legal team confidence restored. Tool went from liability to essential workflow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST SIGNALS ===== -->
+    <section class="trust">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <span class="section-label"><i class="fas fa-certificate"></i> Credentials</span>
+                <h2 class="section-title" style="color: white;">Certified Expertise You Can Trust</h2>
+                <p style="color: #64748b; max-width: 560px; margin: 0 auto; line-height: 1.7;">Our team holds industry-recognised certifications. You get proven experts — not consultants learning on your project.</p>
+            </div>
+            <div class="cert-badges-row">
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="22e8b17e-f759-46a9-a41c-77a123aeaad2" data-share-badge-host="https://www.credly.com"></div>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="16f19ee8-725c-4b36-9df9-a9cfceda6adf" data-share-badge-host="https://www.credly.com"></div>
+            </div>
+            <div class="partners-row">
+                <div class="partner-badge"><i class="fab fa-microsoft"></i><span>Microsoft AI Cloud Partner Program &nbsp;|&nbsp; Partner ID: 7099667</span></div>
+                <div class="partner-badge"><i class="fab fa-aws"></i><span>AWS Partner Network Member</span></div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-badge"><div class="num">100+</div><div class="lbl">Projects Delivered</div></div>
+                <div class="stat-badge"><div class="num">15+</div><div class="lbl">Industries Served</div></div>
+                <div class="stat-badge"><div class="num">8</div><div class="lbl">Service Domains</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="final-cta">
+        <div class="container-sm">
+            <h2>Are Your LLM Costs Under Control?</h2>
+            <p>If you're spending more than you expected on LLM infrastructure — or you have no visibility into what's actually happening — we should talk.</p>
+            <a href="../contact.html" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem; display: inline-flex;">
+                <i class="fas fa-calendar-check"></i> Book a Free Consultation
+            </a>
+            <p style="margin-top: 1.5rem; color: #475569; font-size: 0.875rem;">No sales pitch. First call is a free diagnostic of your LLM stack.</p>
+        </div>
+    </section>
+
+    <!-- Sticky CTA (mobile) -->
+    <div class="sticky-cta">
+        <a href="../contact.html" class="btn-sticky">Book a Free Consultation →</a>
+    </div>
+
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+</body>
+</html>
